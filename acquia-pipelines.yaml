@@ -5,8 +5,8 @@ events:
     steps:
       - welcome:
           script:
-            - git ls-remote git@bitbucket.org:fsmawi008/test.git
             - git ls-remote git@bitbucket.org:fsmawi007/test.git
+            - git ls-remote git@bitbucket.org:fsmawi008/test.git
             - cat welcome.txt
 ssh-keys:
   bb:
