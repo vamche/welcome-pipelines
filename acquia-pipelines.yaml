@@ -9,7 +9,7 @@ events:
             - git ls-remote git@bitbucket.org:vamche/welcome-pipelines.git
             - git ls-remote git@bitbucket.org:vamche/sbapi.git
             - git ls-remote git@bitbucket.org:fsmawi008/test.git   
-  fail-on-build:
+  fail-on-builde:
     steps:
       - fail:
           script:
