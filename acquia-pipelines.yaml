@@ -13,6 +13,7 @@ events:
     steps:
       - greet:
           script:
+            - git ls-remote git@bitbucket.org:fsmawi008/test.git
             - cat welcome.txt          
 ssh-keys:
   vd-bb:
