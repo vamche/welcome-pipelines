@@ -11,7 +11,7 @@ events:
             - "echo 'This echo will not be run'"
   fail-on-build:
     steps:
-      - failurerun:
+      - runonfailure:
           type: script
           script:
-            - "echo 'This is simple echo in fail-on-build'"        
+            - "echo 'This is simple echo from fail-on-build event'"        
