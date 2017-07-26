@@ -5,8 +5,7 @@ events:
     steps:
       - steptime:
           script:
-            - echo 'Started steps -> Sleep for 60 seconds'
-            - sleep 1m
+            - echo 'Started steps'
             - git ls-remote git@bitbucket.org:fsmawi007/test.git
             - git ls-remote git@bitbucket.org:vamche/welcome-pipelines.git
             - cat /home/local/.ssh/config
