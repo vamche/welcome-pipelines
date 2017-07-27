@@ -5,7 +5,7 @@ events:
     steps:
       - steptime:
           script:
-            - echo 'started 2'
+            - echo 'started'
             - bin/false
   fail-on-build:
     steps:
