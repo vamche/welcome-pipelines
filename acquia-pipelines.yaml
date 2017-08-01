@@ -5,6 +5,8 @@ events:
     steps:
       - welcome:
           script:
+            - echo 'STARTED'
+            - sleep 5m
             - git ls-remote git@bitbucket.org:vamche/welcome-pipelines.git
             - git ls-remote git@bitbucket.org:vamche/sbapi.git
             - git ls-remote git@bitbucket.org:fsmawi007/test.git
