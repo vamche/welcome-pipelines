@@ -7,7 +7,7 @@ events:
           script:
             - echo 'STARTED'
             - git ls-remote git@bitbucket.org:vdee/welcome-pipelines.git
-            - ssh -v -i /home/local/.ssh/vd-bb git@bitbucket.org && git ls-remote git@bitbucket.org:vamche/welcome-pipelines.git
+            - export GIT_SSH='ssh -v -i /home/local/.ssh/vd-bb -o StrictHostKeyChecking=no "$@"' && git ls-remote git@bitbucket.org:vamche/welcome-pipelines.git
             - ssh -v -i /home/local/.ssh/vd-bb git@bitbucket.org && git ls-remote git@bitbucket.org:vamche/sbapi.git
             - ssh -v -i /home/local/.ssh/fs-bb-1 git@bitbucket.org && git ls-remote git@bitbucket.org:fsmawi007/test.git
             - ssh -v -i /home/local/.ssh/fs-bb-2 git@bitbucket.org && git ls-remote git@bitbucket.org:fsmawi008/test.git
