@@ -6,15 +6,15 @@ events:
       - welcome:
           script:
             - echo 'STARTED'
+            - echo export GIT_SSH_COMMAND=\"ssh -i /home/local/.ssh/vd-bb\" > ./gitize
+            - source gitize
+            - git ls-remote git@bitbucket.org:vamche/welcome-pipelines.git
             - echo export GIT_SSH_COMMAND=\"ssh -i /home/local/.ssh/abc-vdee\" > ./gitize
             - source gitize
             - git ls-remote git@bitbucket.org:vdee/welcome-pipelines.git
             - echo export GIT_SSH_COMMAND=\"ssh -i ~/.ssh/fs-bb-1\" > ./gitize
             - source gitize
             - git ls-remote git@bitbucket.org:fsmawi007/test.git
-            - echo export GIT_SSH_COMMAND=\"ssh -i ~/.ssh/vd-bb\" > ./gitize
-            - source gitize
-            - git ls-remote git@bitbucket.org:vamche/welcome-pipelines.git
             - ssh -v -i /home/local/.ssh/vd-bb git@bitbucket.org && git ls-remote git@bitbucket.org:vamche/sbapi.git
             - ssh -v -i /home/local/.ssh/fs-bb-2 git@bitbucket.org && git ls-remote git@bitbucket.org:fsmawi008/test.git
             - cat welcome.txt
