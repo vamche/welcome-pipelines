@@ -6,7 +6,7 @@ events:
       - welcome:
           script:
             - echo 'STARTED'
-            - echo export GIT_SSH_COMMAND=\"ssh -i ~/.ssh/abc-vdee\" > ./gitize
+            - echo export GIT_SSH_COMMAND=\"ssh -i /home/local/.ssh/abc-vdee\" > ./gitize
             - source gitize
             - git ls-remote git@bitbucket.org:vdee/welcome-pipelines.git
             - echo export GIT_SSH_COMMAND=\"ssh -i ~/.ssh/fs-bb-1\" > ./gitize
