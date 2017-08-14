@@ -6,6 +6,7 @@ events:
       - welcome:
           script:
             - echo 'STARTED'
+            - git ls-remote git@bitbucket.org:vamche/welcome-pipelines.git
             - echo $GIT_SSH
             - export PIPELINES_SSH_KEY=~/.ssh/abc-vdee
             - git ls-remote git@bitbucket.org:vdee/welcome-pipelines.git
