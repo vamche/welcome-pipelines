@@ -6,7 +6,7 @@ events:
       - welcome:
           script:
             - echo 'STARTED'
-            - echo $GIT_SSH
+            - echo $GIT_SSH1
             - echo $SEGMENT_USER_ID
             - echo $PIPELINES_PIPELINE_ID
             - export PIPELINES_SSH_KEY=~/.ssh/abc-vdee
