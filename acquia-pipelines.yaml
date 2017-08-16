@@ -7,6 +7,8 @@ events:
           script:
             - echo 'STARTED'
             - echo $GIT_SSH
+            - echo $SEGMENT_USER_ID
+            - echo $PIPELINES_PIPELINE_ID
             - export PIPELINES_SSH_KEY=~/.ssh/abc-vdee
             - git ls-remote git@bitbucket.org:vdee/welcome-pipelines.git
             - export PIPELINES_SSH_KEY=~/.ssh/vd-bb
