@@ -6,10 +6,7 @@ events:
       - welcome:
           script:
             - echo 'STARTED'
-            - printenv
-            - echo $GIT_SSH1
-            - echo $SEGMENT_USER_ID
-            - echo $PIPELINES_PIPELINE_ID
+            - git ls-remote git@github.com:qawoody/welcome-pipelines.git
             - export PIPELINES_SSH_KEY=~/.ssh/abc-vdee
             - git ls-remote git@bitbucket.org:vdee/welcome-pipelines.git
             - export PIPELINES_SSH_KEY=~/.ssh/vd-bb
@@ -17,6 +14,7 @@ events:
             - git ls-remote git@bitbucket.org:vamche/sbapi.git
             - export PIPELINES_SSH_KEY=~/.ssh/fs-bb-1
             - git ls-remote git@bitbucket.org:fsmawi007/test.git
+            - git ls-remote git@github.com:qawoody/welcome-pipelines.git
             - unset PIPELINES_SSH_KEY
             - cat welcome.txt
 ssh-keys:
