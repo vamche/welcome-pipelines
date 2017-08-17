@@ -7,14 +7,14 @@ events:
           script:
             - echo 'STARTED'
             - git ls-remote git@github.com:qawoody/welcome-pipelines.git
-            - export PIPELINES_SSH_KEY=~/.ssh/abc-vdee
+            - export PIPELINE_SSH_KEY=~/.ssh/abc-vdee
             - git ls-remote git@bitbucket.org:vdee/welcome-pipelines.git
-            - export PIPELINES_SSH_KEY=~/.ssh/vd-bb
+            - export PIPELINE_SSH_KEY=~/.ssh/vd-bb
             - git ls-remote git@bitbucket.org:vamche/welcome-pipelines.git
             - git ls-remote git@bitbucket.org:vamche/sbapi.git
-            - export PIPELINES_SSH_KEY=~/.ssh/fs-bb-1
+            - export PIPELINE_SSH_KEY=~/.ssh/fs-bb-1
             - git ls-remote git@bitbucket.org:fsmawi007/test.git
-            - unset PIPELINES_SSH_KEY
+            - unset PIPELINE_SSH_KEY
             - cat welcome.txt
 ssh-keys:
   abc-vdee:
