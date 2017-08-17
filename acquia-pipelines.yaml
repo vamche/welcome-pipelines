@@ -7,6 +7,7 @@ events:
           script:
             - echo 'STARTED'
             - git ls-remote git@github.com:qawoody/welcome-pipelines.git
+            - PIPELINE_SSH_KEY=~/.ssh/fs-bb-1 git ls-remote git@bitbucket.org:fsmawi007/test.git
             - export PIPELINE_SSH_KEY=~/.ssh/abc-vdee
             - git ls-remote git@bitbucket.org:vdee/welcome-pipelines.git
             - export PIPELINE_SSH_KEY=~/.ssh/vd-bb
