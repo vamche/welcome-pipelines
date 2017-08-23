@@ -6,7 +6,7 @@ events:
       - welcome:
           script:
             - echo 'STARTED '
-            - google-chrome --headless --no-sandbox --disable-gpu --remote-debugging-port=9222
+            - google-chrome --headless --disable-gpu --remote-debugging-port=9222
             - git ls-remote git@github.com:qawoody/welcome-pipelines.git
             - PIPELINE_SSH_KEY=~/.ssh/fs-bb-1 git ls-remote git@bitbucket.org:fsmawi007/test.git
             - export PIPELINE_SSH_KEY=~/.ssh/abc-vdee
