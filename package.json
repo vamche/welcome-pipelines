@@ -7,6 +7,6 @@
   },
   "private": true,
   "dependencies": {
-   "babel-preset-latest" : "^5.9.1"
+   "babel-preset-latest" : "^6.1.4"
   }
 }
