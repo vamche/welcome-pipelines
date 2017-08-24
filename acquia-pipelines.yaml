@@ -5,7 +5,7 @@ events:
     steps:
       - welcome:
           script:
-            - echo 'STARTED '
+            - echo 'STARTED'
             - 'nvm install v6.9.5'
             - 'nvm use 6.9.5'
             - 'npm install'
