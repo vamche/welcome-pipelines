@@ -7,4 +7,4 @@ events:
           type: script
           script:
             - echo "SLEEP TEST"
-            - sleep 6m
+            - sleep 2m
