@@ -6,4 +6,4 @@ events:
       - sleep:
           type: script
           script:
-            - echo "START"
+            - echo "START...ED"
