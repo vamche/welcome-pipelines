@@ -6,6 +6,9 @@ variables:
 events:
   build:
     steps:
+      - welcome:
+          script:
+            - cat welcome.txt
       - node_v7.10:
           type: script
           script:
