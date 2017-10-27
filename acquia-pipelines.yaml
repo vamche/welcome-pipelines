@@ -14,7 +14,7 @@ events:
       - script1:
           script:
             - npm install babel-preset-latest
-            - echo "TEST DEPLOY"
+            - echo "TEST IT DEPLOY"
             - pipelines-deploy
   pr-merged:
     steps:
