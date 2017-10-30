@@ -13,10 +13,8 @@ events:
       - script1:
           script:
             - echo "TESTTT DEPLOY"
-            - pipelines-deploy
   pr-merged:
     steps:
       - deploy:
           script:
             - echo "Pull request merged"
-            - pipelines-deploy
