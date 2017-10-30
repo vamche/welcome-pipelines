@@ -12,7 +12,7 @@ events:
             - cat welcome.txt
       - script1:
           script:
-            - echo "TESTTT DEPLOY"
+            - echo "TESTED DEPLOY"
   pr-merged:
     steps:
       - deploy:
