@@ -15,7 +15,7 @@
 Pipelines could not find a [32macquia-pipelines.yaml[39m in your repository's root directory.
 Here is an example [32macquia-pipelines.yaml[39m file you could use:
 
-[33mversion: 1.1.0
+[33mversion: 1.2.0
 events:
   build:
     steps:
