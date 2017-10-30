@@ -12,7 +12,7 @@ events:
             - cat welcome.txt
       - script1:
           script:
-            - echo "TESTing DEPLOY"
+            - echo "TESTTT DEPLOY"
             - pipelines-deploy
   pr-merged:
     steps:
