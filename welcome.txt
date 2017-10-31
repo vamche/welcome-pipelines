@@ -21,7 +21,7 @@ events:
     steps:
       - build-something:
           script:
-            - 'echo "Building my code 4"'
+            - 'echo "Building my code 5"'
       - test-something:
           script:
             - 'echo "Testing my code"'[39m
