@@ -12,7 +12,7 @@ events:
             - cat welcome.txt
       - script1:
           script:
-            - echo "GO SLEEP"
+            - echo "GO SLEEP ..."
             - sleep 5m
             - echo "TESTED DEPLOY"
   pr-merged:
