@@ -12,6 +12,7 @@ events:
             - cat welcome.txt
       - script1:
           script:
+            - sleep 5m
             - echo "TESTED DEPLOY"
   pr-merged:
     steps:
