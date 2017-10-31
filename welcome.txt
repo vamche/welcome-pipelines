@@ -21,7 +21,7 @@ events:
     steps:
       - build-something:
           script:
-            - 'echo "Building my commit 13"'
+            - 'echo "Building my commit 14"'
       - test-something:
           script:
             - 'echo "Testing my code"'[39m
