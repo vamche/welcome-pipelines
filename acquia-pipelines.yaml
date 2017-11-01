@@ -8,8 +8,7 @@ events:
     steps:
       - welcome:
           script:
-            - echo "WELCOME"
-            - cat welcome.txt
+            - echo "WELCOME 27"
       - script1:
           script:
             - echo "GO SLEEP ..."
