@@ -4,7 +4,7 @@ events:
     steps:
       - welcome:
           script:
-            - echo "WELCOME 30"
+            - echo "WELCOME 31"
       - script1:
           script:
             - echo "GO SLEEP ..."
