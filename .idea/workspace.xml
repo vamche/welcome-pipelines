@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f3cacac1-8a57-4e55-a02b-c2a96bcd8240" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/welcome.txt" afterPath="$PROJECT_DIR$/welcome.txt" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -21,8 +21,8 @@
       <file leaf-file-name="acquia-pipelines.yaml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/acquia-pipelines.yaml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+            <state relative-caret-position="135">
+              <caret line="9" column="17" lean-forward="true" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
               <folding />
             </state>
           </provider>
@@ -140,7 +140,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1700000" />
+    <option name="totallyTimeSpent" value="2163000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="42" y="23" width="1440" height="797" extended-state="0" />
@@ -251,8 +251,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/acquia-pipelines.yaml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+        <state relative-caret-position="135">
+          <caret line="9" column="17" lean-forward="true" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
           <folding />
         </state>
       </provider>
