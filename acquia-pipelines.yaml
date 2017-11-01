@@ -1,14 +1,10 @@
 version: 1.0.0
-variables:
-  global:
-    PIPELINE_CLOUD_SITE: jamessites
-
 events:
   build:
     steps:
       - welcome:
           script:
-            - echo "WELCOME 27"
+            - echo "WELCOME 28"
       - script1:
           script:
             - echo "GO SLEEP ..."
