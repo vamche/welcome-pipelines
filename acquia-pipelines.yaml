@@ -4,13 +4,13 @@ events:
     steps:
       - welcome:
           script:
-            - echo "WELCOME 39"
+            - echo "WELCOME 40"
       - script1:
           script:
-            - echo "GO SLEEP ..."
-            - echo "TESTED DEPLOY"
+            - echo "TESTING DEPLOY ..."
+            - pipelines-deploy
   pr-merged:
     steps:
       - deploy:
           script:
-            - echo "Pull request merged"
+            - echo "DEPLOY TIME ..."
