@@ -4,7 +4,7 @@ events:
     steps:
       - welcome:
           script:
-            - echo "WELCOME 41"
+            - echo "WELCOME 42"
       - script1:
           script:
             - echo "TESTING DEPLOY ..."
