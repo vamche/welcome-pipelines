@@ -40,6 +40,8 @@ events:
       - welcome:
           script:
             - echo $PIPELINE_JOB_URL
+            - echo $SLACK_TOKEN14
+            - echo $SLACK_TOKEN13
             - echo "WELCOME 54"
       - script1:
           script:
