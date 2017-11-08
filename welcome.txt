@@ -15,13 +15,13 @@
 Pipelines could not find a [32macquia-pipelines.yaml[39m in your repository's root directory.
 Here is an example [32macquia-pipelines.yaml[39m file you could use:
 
-[33mversion: 1.0.0
+[33mversion: 1.1.0
 events:
   build:
     steps:
       - build-something:
           script:
-            - 'echo "Building my code 10"'
+            - 'echo "Building my commit 14"'
       - test-something:
           script:
             - 'echo "Testing my code"'[39m
