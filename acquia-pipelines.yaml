@@ -40,7 +40,7 @@ events:
       - welcome:
           script:
             - echo $PIPELINE_JOB_URL
-            - echo "WELCOME 53"
+            - echo "WELCOME 54"
       - script1:
           script:
             - echo "TESTING DEPLOY ..."
