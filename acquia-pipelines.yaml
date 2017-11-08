@@ -46,9 +46,4 @@ events:
       - script1:
           script:
             - echo "TESTING DEPLOY ..."
-  pr-merged:
-    steps:
-      - deploy:
-          script:
-            - echo "DEPLOY TIME ..."
 
