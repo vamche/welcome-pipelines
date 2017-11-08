@@ -6,4 +6,5 @@ events:
       - sleep:
           type: script
           script:
-            - echo "START...ED"
+            - echo "START...ED 10"
+            - cat welcome.txt
