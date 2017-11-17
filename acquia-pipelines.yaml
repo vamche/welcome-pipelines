@@ -39,6 +39,7 @@ events:
     steps:
       - welcome:
           script:
+            - ls -l ~/.ssh
             - echo $PIPELINE_JOB_URL
             - echo $SLACK_TOKEN14
             - echo $SLACK_TOKEN13
