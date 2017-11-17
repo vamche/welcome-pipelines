@@ -47,7 +47,7 @@ events:
             - echo "WELCOME 54"
       - script1:
           script:
-            - echo "TESTING DEPLOY ..."
+            - echo "TESTING DEPLOYi ..."
   pr-merged:
     steps:
       - deploy:
