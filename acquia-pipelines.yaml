@@ -6,7 +6,7 @@ events:
       - welcome:
           script:
             - cat welcome.txt
-            - git clone https://github.com/vamche/welcome-pipelines.git
+            - git clone --verbose --progress https://github.com/vamche/welcome-pipelines.git
             - echo 'DONE!'
 ssh-keys:
   vd-bb:
