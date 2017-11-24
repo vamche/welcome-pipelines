@@ -6,8 +6,9 @@ events:
       - welcome:
           script:
             - cat welcome.txt
+            - echo 'GitHub'
             - git clone --verbose --progress https://github.com/vamche/welcome-pipelines.git wp-git
-            - echo 'BBucket'
+            - echo 'BitBucket'
             - git clone --progress --verbose git@bitbucket.org:vamche/welcome-pipelines.git wp-bb
             - echo 'DONE!'
 ssh-keys:
