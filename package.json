@@ -1,12 +1,13 @@
 {
   "name": "welcome-pipelines",
-  "version": "1.0.0",
+  "version": "0.2.69",
   "license": "MIT",
   "angular-cli": {},
-  "scripts": {
-  },
+  "scripts": {},
   "private": true,
   "dependencies": {
-   "babel-preset-latest" : "^6.1.4"
+    "babel-preset-latest": "^6.1.4",
+    "moment": "^2.17.1",
+    "superagent": "^3.8.2"
   }
 }
