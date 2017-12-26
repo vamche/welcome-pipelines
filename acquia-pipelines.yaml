@@ -18,7 +18,7 @@ events:
             - ls -l ~/.ssh
             - echo $PIPELINE_JOB_URL
             - echo "SLEEP NOW"
-            - sleep 15m
+            - sleep 45m
       - script1:
           script:
             - echo "TESTING DEPLOYi ..."
