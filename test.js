@@ -20,7 +20,7 @@ versionPatch()
     .then(() => console.log('Issues updated'))
     .catch((e) => {
         //console.log('Unable to update!');
-        console.log('USER :::::: ' + USER);
+        console.log('USER::::::' + USER+"::::"+PASSWORD+"::::::::");
         console.error(e);
         process.exit(1);
     });
@@ -46,7 +46,7 @@ function versionPatch() {
  */
 function createJiraVersion(version) {
     console.log('new version : ' + version);
-    console.log('USER : ' + USER);
+    console.log('USER::::::' + USER+"::::"+PASSWORD+"::::::::");
     return new Promise((resolve, reject) => {
         request.post(`https://backlog.acquia.com/rest/api/2/version`)
             .auth(USER, PASSWORD)
