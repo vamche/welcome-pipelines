@@ -16,6 +16,7 @@ events:
             - echo $JIRA_USER
             - 'nvm install v6.9.5'
             - 'nvm use 6.9.5'
+            - 'npm install'
             - ls -l ~/.ssh
             - chmod +x ./post_deploy.sh
             - ./post_deploy.sh
