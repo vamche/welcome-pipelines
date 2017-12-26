@@ -14,9 +14,10 @@ versionPatch()
     .then((version) => createJiraVersion(version))
     .then((version) => {
         versionId = version; // new version
-        return getVersionIssues(packageJson.version);
+        console.log('Version ', versionId);
+        // return getVersionIssues(packageJson.version);
     })
-    .then((issues) => Promise.all(issues.map(issue => updateIssueWithVersion(issue, versionId))))
+    // .then((issues) => Promise.all(issues.map(issue => updateIssueWithVersion(issue, versionId))))
     .then(() => console.log('Issues updated'))
     .catch((e) => {
         //console.log('Unable to update!');
