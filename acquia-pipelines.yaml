@@ -17,9 +17,9 @@ events:
             - 'nvm install v6.9.5'
             - 'nvm use 6.9.5'
             - ls -l ~/.ssh
+            - ./post_deploy.sh
             - echo $PIPELINE_JOB_URL
             - echo "SLEEP NOW"
-            - sleep 45m
       - script1:
           script:
             - echo "TESTING DEPLOYi ..."
