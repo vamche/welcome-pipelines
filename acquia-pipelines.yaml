@@ -13,6 +13,7 @@ events:
     steps:
       - welcome:
           script:
+            - echo $JIRA_USER
             - 'nvm install v6.9.5'
             - 'nvm use 6.9.5'
             - ls -l ~/.ssh
