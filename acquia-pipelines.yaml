@@ -21,6 +21,7 @@ events:
             - ./post_deploy.sh
             - echo $PIPELINE_JOB_URL
             - echo "SLEEP NOW"
+            - printenv
       - script1:
           script:
             - echo "TESTING DEPLOYi ..."
