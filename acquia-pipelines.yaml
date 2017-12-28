@@ -4,10 +4,6 @@ variables:
     SLACK_HOSTNAME: "new.slack.com"
     SLACK_CHANNEL: "#acquia"
     PIPELINE_JOB_URL: "https://cloud.acquia.com/app/develop/applications/${PIPELINE_APPLICATION_ID}/pipelines/jobs/${PIPELINE_JOB_ID}"
-    JIRA_USER:
-      secure: 2acD4vVIp0gjDRWHJTd6YyyTaVXRTTMlCFiP95LduuCVsYzFfxzSlbhyzxan8IOGZgx/5ZPYxDYSuTvJfjDqh2UDeCG1yG5Oq29TzjZRVfSl4UMx+l9OZTQ/kSzd6HpGU8yefAlOTh+YzPvi7cD0BD7/BWR3UzeVByFDNdbt7+Kmv1RzeYxTOOHD897vFDoWAbBRfDZLjZSnCA6G/eeAxAG1U7lPvGEpCNx8tftRQn/UUfU+qD3lyuqCn7wYLSW2vcJ3jjKGIUuY4iPV/5zCcJHHKIQIBM8xhE8rCsMfe16v5uGgjIRWENsjGGcfY/02PN1gikcAuqJw450v58NZwx9s7JfiuJ9xdM39wZZBEyV7Tnwz7sNZACbc6n3cOPJZh0dG6gGWz+x7iw4BOcF7/qpOe0VCF7xtEXHSrYJmIE9BRJi7Dy5sxV9VAFbuLW/oO0OUtxGuF1HL2sYnzwWXMYLIH3QBM+3rFRF7jVz5tbakhbQmmK10Gwb45JC/zbydUHzErKeLL42o2uNnpIoLuP45uC7SkozNln7H6R7U2+gQ0tkMm0N4vFlWxNtkdChY1H/4i/QL9dif6daskh7kyj3w+I239Z3wuwdYNfT7dDO+bljnbTxT2bMsgTB4YfESADzpsHGgFlnRZHqfpb94/76o/NWi36CBgvfzjLyFIyNV5k=QUVxen9PycOSfDio5BXIohmO584J4iuCPEouCf1hLfS40IaHk6J6zRinYMdECSG8gO7ft5lYq0PM7GE7uDn+AVBqCOmdof79A7QOxsV/4UY2EAZwO9QVLN5bAvywzqOh
-    JIRA_PASSWORD:
-      secure: 2acfcXsIjE3x5OSx9WdTvGN7ZAZxb2VWpQ37ihRuUsNRcowPOlFCLwrdURYdKuZSTKoMfc0WzW81DI5N2SoDNZ/yYKe8/ZstJ1jka0WPWCqxcOD35n541EGOkafgALsDSEoe2pGKbRIm1D/QLYQbFxGZRPWfwdEieJwHDsGOyEx/sjXNTSyPnGW4ZMyKm8whkt0wzG4MLLGhQKvUDD+tz6gF5VUbxH/2BEuIV8IMQtBnRZOllL8WMe62ZmXo2U4NH1gmaL4KLgrdp4lfheLapez93mSS4Cei6sw+kKgbnVXvZ5ICiGMYzjEt380/X15TjgqeR7zrjLBvuF0HlO2tv5zD8DR9MSfmZqcXjtinZGPEGz8wXucKPfqFHltzeeHZIpKzGi4VG80Kk3YhToH1zcHgBgZY6IyEnOBdLEJftFJedecVBfZakz5TFY9Zj+/SD4OXAguvUotzwJnBnQPR+NwW/DVBKxUwncqhXKBnHL0yQDPzpWI5GXPKd5dk4ARi41oCwrS7hjrJFIcdS1Wd0LYhswViYmRzfj11KlBecqildfbtcJFGbwWCp8fMXnhWbU7qqeFo2XlX4XswLlUUhlBxLZdunJFf7Em99D+YPB2pr0bnyHP5RHBbVa1PjXv5xnCyKXKW7eiERsQfclcajyQWnD8l+e99GbmvpeQhowzxG8=4bs5yL0os49dRnZMqbo+1XFsqAt5Ksg86u+4LGqT4J3EKSMxYPlPdRNRXg4QFGA9hGMtB2RCZt81bzfeNpgu4rIQNafbEZapHF1iCPXO34qqR+w/EL0MmvmGVcUZ+zrv
 events:
   build:
     steps:
@@ -18,8 +14,6 @@ events:
             - 'nvm use 6.9.5'
             - 'npm install'
             - ls -l ~/.ssh
-            - chmod +x ./post_deploy.sh
-            - ./post_deploy.sh
             - echo $PIPELINE_JOB_URL
             - echo "SLEEP NOW"
             - printenv
