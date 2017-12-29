@@ -9,7 +9,7 @@ events:
     steps:
       - welcome:
           script:
-            - echo $JIRA_USER
+            - echo 'Hello world!'
             - 'nvm install v6.9.5'
             - 'nvm use 6.9.5'
             - 'npm install'
