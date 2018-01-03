@@ -20,6 +20,8 @@ events:
             - 'nvm use 6.9.5'
             - 'npm install'
             - ls -l ~/.ssh
+            - echo $SLACK_CHANNEL
+            - echo $SLACK_HOSTNAME
             - echo $PIPELINE_JOB_URL
             - echo $JIRA_USER
             - echo $JIRA_WORD
