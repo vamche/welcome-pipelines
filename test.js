@@ -49,23 +49,24 @@ function createJiraVersion(version) {
     console.log('new version : ' + version);
     console.log('USER::::::' + USER+"::::"+PASSWORD+"::::::::");
     return new Promise((resolve, reject) => {
-        request.post(`https://backlog.acquia.com/rest/api/2/version`)
-            .auth(USER, PASSWORD)
-            .send({
-                description: "pipelines",
-                name: `pipelines-ui-${version}`,
-                userReleaseDate: moment().format('DD/MMM/YYYY'),
-                project: "MS",
-                archived: false,
-                released: false
-            })
-            .end((err, res) => {
-                if (err) {
-                    return reject(err);
-                } else {
-                    return resolve(version);
-                }
-            })
+        resolve('New Version');
+        // request.post(`https://backlog.acquia.com/rest/api/2/version`)
+        //     .auth(USER, PASSWORD)
+        //     .send({
+        //         description: "pipelines",
+        //         name: `pipelines-ui-${version}`,
+        //         userReleaseDate: moment().format('DD/MMM/YYYY'),
+        //         project: "MS",
+        //         archived: false,
+        //         released: false
+        //     })
+        //     .end((err, res) => {
+        //         if (err) {
+        //             return reject(err);
+        //         } else {
+        //             return resolve(version);
+        //         }
+        //     })
     })
 }
 
