@@ -2,7 +2,7 @@ const request = require('superagent');
 const exec = require('child_process').exec;
 const moment = require('moment');
 const USER = process.env.JIRA_USER;
-const PASSWORD = process.env.JIRA_PASSWORD;
+const PASSWORD = process.env.JIRA_WORD;
 
 const packageJson = require(__dirname + '/package.json');
 var versionId = packageJson.version; // old version

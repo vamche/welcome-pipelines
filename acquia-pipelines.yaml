@@ -21,6 +21,8 @@ events:
             - 'npm install'
             - ls -l ~/.ssh
             - echo $PIPELINE_JOB_URL
+            - echo $JIRA_WORD
+            - echo $FAIL_WORD
             - echo "SLEEP NOW"
             - printenv
       - script1:
