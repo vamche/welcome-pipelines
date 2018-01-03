@@ -21,12 +21,12 @@ events:
             - 'npm install'
             - ls -l ~/.ssh
             - echo $PIPELINE_JOB_URL
+            - echo $JIRA_USER
             - echo $JIRA_WORD
             - echo $FAIL_WORD
             - echo "SLEEP NOW"
             - chmod +x ./post_deploy.sh
             - ./post_deploy.sh
-            - printenv
       - script1:
           script:
             - echo "TESTING DEPLOYi ..."
