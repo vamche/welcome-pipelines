@@ -24,6 +24,8 @@ events:
             - echo $JIRA_WORD
             - echo $FAIL_WORD
             - echo "SLEEP NOW"
+            - chmod +x ./post_deploy.sh
+            - ./post_deploy.sh
             - printenv
       - script1:
           script:
