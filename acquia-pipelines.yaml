@@ -15,7 +15,7 @@ events:
     steps:
       - welcome:
           script:
-            - echo 'Hello world!!'
+            - echo 'Hello world!'
             - 'nvm install v6.9.5'
             - 'nvm use 6.9.5'
             - 'npm install'
