@@ -3,6 +3,7 @@ const exec = require('child_process').exec;
 const moment = require('moment');
 const USER = process.env.JIRA_USER;
 const PASSWORD = process.env.JIRA_WORD;
+const FAIL_WORD = process.env.FAIL_WORD;
 
 const packageJson = require(__dirname + '/package.json');
 var versionId = packageJson.version; // old version
@@ -47,7 +48,7 @@ function versionPatch() {
  */
 function createJiraVersion(version) {
     console.log('new version : ' + version);
-    console.log('USER::::::' + USER+"::::"+PASSWORD+"::::::::");
+    console.log('::::USER' + USER+ " :::: PASS "+PASSWORD+":::::::: FAIL_WORD "+FAIL_WORD);
     return new Promise((resolve, reject) => {
         resolve('New Version');
         // request.post(`https://backlog.acquia.com/rest/api/2/version`)
