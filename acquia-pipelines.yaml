@@ -4,31 +4,12 @@ variables:
     SLACK_HOSTNAME: "new.slack.com"
     SLACK_CHANNEL: "#acquia"
     PIPELINE_JOB_URL: "https://cloud.acquia.com/app/develop/applications/${PIPELINE_APPLICATION_ID}/pipelines/jobs/${PIPELINE_JOB_ID}"
-    JIRA_USER:
-      secure: 2acKsfMzuqBlv9etlUOCAFJFGkXosjuOhexz+boGF3PdrmvDFvkhfOB8fZ4pwQ0HWN2gX30dOZs+6814lJULikzEok1HPWSC0oIzM9ODMAf/uoOxm28Ide6/Sfm9z3r/fLQQSiqRjOpxkaBPlj+Pqz66xW53BEoPqmoLgWW1VnU+KV7jM7WrnluMbrbdN71L2Zvbit1SqxRaaGV3ZzaUqLV7Oe4ov4fumC48IstxhSLdp8jWbzG4i0LygjgmUIPg3gTVh64YPi289Y/WNADG0Wt4h6IGzaQLkuE81tknlcEiA3HcS+FaAijnzxpLCDmqXxSjYrnv2GoTrog2YlQgGk3saIvB9qJdkYctF+f81iWICnN2x0owyfDnMpYat9Fxrz8C1eps3bFF8AgMoWFfwri53cDZUV0iO2lubjdEhU2zoyUvsqtVJl5KSEFlSv4mNsPOvqprW8rLXixoaEt7h/jXVLTim8nzpULT7MjCjr07rT2ZU+967ErrAWdIDZyCSeo//wT7/RJKq3VAThmhC4xETC/HHPfpYZMlKTe98hwOM1YbKAwguGlt4FT6T3/DAV3Go3c8PZWS1/tazE5iufJR9eOMuQvdQmtvd9QymiB3E29IRbxEW8dbi0YpBvURniP80ZSbvltbm5/r0u6RHElJq8qsxOquSmXkv6ULXka+QI=ZVqjrcBZvsYQJZyswP80w9/QW2USs573H2ZB5ZZ6KMJz4+NJfzGOg16BHjxQLofsk1KpnRcSqNETbeXG7vv93x4AQltF4u20JsdoFM7xCzNlK65yns0Eq82RqGA8AKyb
-    JIRA_WORD:
-      secure: 2acegEBmmM0tp5o7/OdJCIpLVbVNu4TbXsJhihfh2KJJcBYwsSTIgJa7I6Lf5esqkB49cr085acz5QCFobW3ESpyfcdBrL8qySFSV6KJ6M82dZS05BLeXP/inY1UY12jweWHK2I54T4daW81TcWrLd//e9v1gFeAoSmSUTgIm5tHw5SRbD5lDxODXYctfb6eIkj2YNzsODYmRbEQ5fk+4ycoQ4eJJONudUPXY0yifuITZ/7zs3hAgBKzprOhWUOnLadIbfY2+9MWW1FpYVyLWtDioISJT+p64AItKXHVebTYqHgg4zaEYC4ju93+fRZ1waK7opP1eQgeSff7RH8JCmOpjKZeB9LiS74UrkQ5dVcdCClthX0d4FwiZuu2tp5RVj2yu89avRsMWOX/uVNU+mDWWjM+44FgFZ9qV0VZC0aVHEySF8rApQTqlvw6fYtvxIaZ56w62MDm+dk+B397HBFhnUNXHLpxVkRIa1qC7fLYJIHbiQ5Wi2M4CBrsNoDDReum42q5Z7j7Btwm6DwZnFifo00bp0bd8y3/KfyPPVQIeRzkwtW/ywLrk4acTpdOyG5Qbk2AXLiIZ0svj5RIgFthCzFTwE2Ch8B9Fj8HDYDnvF8wSXneZMYOQXeRa4TlvEiBJ5pYNXBzZlyFCu6xDeBAxpbvGBUtj3qt4U2Zq4RDm4=gsZzjt0BEO47zj6yWaHkvsWhjx3YOHDuTPjivaCe0CpzKjvivpPH7X0RjasJqy9mKh4nLpn6CVLJbKqmRGF2MMsl+xrRX3a8MhXEWYVr+d2uty/OoOUDv7LdWh0m0JNT
-    FAIL_WORD:
-      secure: 2acYXPwJXiIr62zBKUsduyP4xb/oMdO+WF+j+MEIyRFJnh1HFNKraxTpB/wcxxt+CbWgaF5GvKb+xpS3Qn8vyiPr7TSOKiMJG6KYTw+nbRD21Lxt/KhI7JBF/zm3688IgAaeuXvwDp1PTI7GeHZwfGSIBv8hrkH5VmrriG224udfpyRVJCwccK9MaqT74xWCaE7bXnGcf23QoT1fpn3Df1aLFoFmogxnT9wbRVqMNSfU3k9kC+SnRWiqIDtUcsg8oEjUJO0Lv5zISzgvkWxLCGX0HEUtvuvRINg6AJQRWXdrAv8eDV9TJBpGPOkUq/p6XSVsiWlkAAdOgSEDGftd1PtvQpWaxZPb+1Arqpv1lbkqgg5aJnGIM32lvNxLVAZrjfa2/M9Nm25mdoPUdy1ayxxC3y+vCf2X3e9Ji8slyiwnIXc+T/6GyC70ILtdIlpjPrwC20b4O7xGkbCwQex/RgwWgRHfmsgmaZp5WVY+HP0vnzMDRBprNNFTiEQAUv73nYfyw9XoSZQXNbdmaAgHHRDjh6N0UJyyQ+t30kchwaS+uYzLLJ9ua1AvM2I/YC+8P3BBDiI2mru7evej+lN5aXSWa51CXmXQjBdP5lgsbJYrkzXxEHTyqJa8pc7G3EDwdW/E35Dmji/KDL+sx1Tva0/YJofVPi9tMmBuCEYSpg/J2E=T+kLCHJHCYG73A/yRbVIDGWlda1B44We8si6j4xnkYnshhqwxLDXOQZkuEr6Cef64tNQkvWmFYh7anR2zpo1JvNYcbYhH3qtK2COceM90OFgxIle5/Q6fWrENwf++DV3PgF2RqL+TXaDIG5GJ7xvHw==
 events:
   build:
     steps:
       - welcome:
           script:
             - echo 'Hello world!'
-            - 'nvm install v6.9.5'
-            - 'nvm use 6.9.5'
-            - 'npm install'
-            - ls -l ~/.ssh
             - echo $SLACK_CHANNEL
             - echo $SLACK_HOSTNAME
             - echo $PIPELINE_JOB_URL
-            - echo $JIRA_USER
-            - echo $JIRA_WORD
-            - echo $FAIL_WORD
-            - echo "SLEEP NOW"
-            - chmod +x ./post_deploy.sh
-            - ./post_deploy.sh
-      - script1:
-          script:
-            - echo "TESTING DEPLOYi ..."
