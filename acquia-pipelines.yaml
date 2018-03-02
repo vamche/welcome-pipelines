@@ -12,4 +12,5 @@ events:
             - echo 'Hello world!'
             - echo $SLACK_CHANNEL
             - echo $SLACK_HOSTNAME
+            - sleep 15m
             - echo $PIPELINE_JOB_URL
