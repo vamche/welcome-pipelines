@@ -1,8 +1,6 @@
 version: 1.0.0
 variables:
   global:
-    SLACK_HOSTNAME: "new.slack.com"
-    SLACK_CHANNEL: "#acquia"
     PIPELINE_JOB_URL: "https://cloud.acquia.com/app/develop/applications/${PIPELINE_APPLICATION_ID}/pipelines/jobs/${PIPELINE_JOB_ID}"
 events:
   build:
@@ -10,7 +8,5 @@ events:
       - welcome:
           script:
             - echo 'Hello world!'
-            - echo $SLACK_CHANNEL
-            - echo $SLACK_HOSTNAME
-            - sleep 15m
+            - git clone --no-checkout 'https://git.drupal.org/project/views_load_more' 'docroot/modules/contrib/views_load_more' && cd 'docroot/modules/contrib/views_load_more' && git remote add composer 'https://git.drupal.org/project/views_load_more' && git fetch composer
             - echo $PIPELINE_JOB_URL
