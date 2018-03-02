@@ -7,6 +7,6 @@ events:
     steps:
       - welcome:
           script:
-            - echo 'Hello world!'
+            - echo 'Hello World!'
             - git clone --no-checkout 'https://git.drupal.org/project/views_load_more' 'docroot/modules/contrib/views_load_more' && cd 'docroot/modules/contrib/views_load_more' && git remote add composer 'https://git.drupal.org/project/views_load_more' && git fetch composer
             - echo $PIPELINE_JOB_URL
