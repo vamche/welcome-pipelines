@@ -5,7 +5,7 @@ variables:
 events:
   build:
     steps:
-      - welcome001:
+      - welcome007:
           script:
             - echo 'Hello World'
             - echo $PIPELINE_JOB_URL
