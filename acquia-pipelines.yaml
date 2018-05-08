@@ -7,6 +7,6 @@ events:
     steps:
       - welcome:
           script:
-            - echo 'Hello World TAG 008!'
+            - echo 'Hello World TAG!'
             - echo $PIPELINE_JOB_URL
             - echo 'Job completed!'
