@@ -7,6 +7,6 @@ events:
     steps:
       - welcome:
           script:
-            - echo 'Hello World!'
+            - echo 'Hello Worldi'
             - echo $PIPELINE_JOB_URL
             - echo 'Job completedi'
