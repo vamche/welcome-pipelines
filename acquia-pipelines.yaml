@@ -9,4 +9,4 @@ events:
           script:
             - echo 'Hello Worldi'
             - echo $PIPELINE_JOB_URL
-            - echo 'Job completedi'
+            - echo 'Job completed'
