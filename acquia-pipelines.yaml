@@ -1,12 +1,33 @@
-version: 1.2.0
-variables:
-  global:
-    PIPELINE_JOB_URL: "https://cloud.acquia.com/app/develop/applications/${PIPELINE_APPLICATION_ID}/pipelines/jobs/${PIPELINE_JOB_ID}"
+version: 1.0.0
+
 events:
   build:
     steps:
-      - welcome:
+      # If you have build instructions, put them here. They are not required.
+      - build_site:
           script:
-            - echo 'Hello World!.'
-            - echo $PIPELINE_JOB_URL
-            - echo 'Job completed! TAG time 00:11!'
+            - touch docroot/index.html
+            - echo "TAG 29-05-2018 06:45 UTC. You successfully deployed your build to an ODE" > docroot/index.html
+
+      # Deploy the build artifact to a Cloud on-demand environment.
+      - deploy:
+          script:
+            - echo 'build deploy'
+  post-deploy:
+    steps:
+      - po_deploy:
+          script:
+            - pipelines-deploy
+  # When a GitHub pull request is merged, this deletes the coresponding ODE.
+  pr-merged:
+    steps:
+      - deploy:
+          script:
+            - pipelines-deploy
+
+  # When a GitHub pull request is closed, this deletes the coresponding ODE.
+  pr-closed:
+    steps:
+      - deploy:
+          script:
+            - pipelines-deploy
