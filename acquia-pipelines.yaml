@@ -7,7 +7,7 @@ events:
       - build_site:
           script:
             - touch docroot/index.html
-            - echo "TAG 29-05-2018 06:45 UTC. You successfully deployed your build to an ODE" > docroot/index.html
+            - echo "TAG 29-05-2018 17:45 UTC. You successfully deployed your build to an ODE" > docroot/index.html
 
       # Deploy the build artifact to a Cloud on-demand environment.
       - deploy:
