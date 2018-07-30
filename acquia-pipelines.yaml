@@ -9,4 +9,5 @@ events:
           script:
             - echo 'Hello World!'
             - echo $PIPELINE_JOB_URL
+            - sleep 2m
             - echo 'Job completed! TAG time 00:02!'
