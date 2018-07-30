@@ -9,5 +9,5 @@ events:
           script:
             - echo 'Hello World!'
             - echo $PIPELINE_JOB_URL
-            - sleep 2m
+            - sleep 1m
             - echo 'Job completed on 30th July 2018!'
