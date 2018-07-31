@@ -9,4 +9,4 @@ events:
           script:
             - echo 'Hello World TAG!'
             - echo $PIPELINE_JOB_URL
-            - echo 'Job completed 31-07-2018.'
+            - echo 'Job completed 31-07-2018.!'
