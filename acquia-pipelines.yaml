@@ -10,4 +10,4 @@ events:
             - echo 'Hello World!'
             - echo $PIPELINE_JOB_URL
             - sleep 1m
-            - echo 'Job completed! August 2nd 2018!'
+            - echo 'Job completed! August 2nd 2018 :)'
