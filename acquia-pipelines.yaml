@@ -12,4 +12,4 @@ events:
             - echo 'Job completed, August 7th 2018 :)'
             - whoami
             - cat /etc/os-release
-            - sleep 10m
+            - mysql -uroot -e "show variables like '%timeout'"
