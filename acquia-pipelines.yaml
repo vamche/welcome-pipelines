@@ -14,4 +14,4 @@ events:
             - echo 'Job completed, August 7th 2018 :)'
             - whoami
             - cat /etc/os-release
-            - mysql -uroot -h localhost -e "show variables like '%timeout'"
+            - mysql -u root -proot -e "show variables like '%timeout'"
