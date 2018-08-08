@@ -12,4 +12,4 @@ events:
             - echo 'Job completed, August 7th 2018 :)'
             - whoami
             - cat /etc/os-release
-            - fail_command
+            - sleep 10m
