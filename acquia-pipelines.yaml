@@ -11,7 +11,7 @@ events:
           script:
             - echo 'Hello World!'
             - echo $PIPELINE_JOB_URL
-            - echo 'Job completed, August 22nd 2018 :P'
+            - echo 'Job completed, August 22nd 2018 :D'
             - whoami
             - cat /etc/os-release
             - mysql -u root -proot -e "show variables like '%timeout'"
