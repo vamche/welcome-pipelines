@@ -18,4 +18,5 @@ events:
             # running our installed versions of Drush, PHPCS, Behat, etc.
             - export PATH="$HOME/.composer/vendor/bin:$SOURCE_DIR/vendor/bin:$PATH"
             - composer validate --no-check-all --ansi --no-interaction
-            - COMPOSER_MEMORY_LIMIT=512M composer update -vvv
+            - composer selfupdate
+            - composer update -vvv
