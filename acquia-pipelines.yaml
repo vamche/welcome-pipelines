@@ -19,5 +19,5 @@ events:
             - export PATH="$HOME/.composer/vendor/bin:$SOURCE_DIR/vendor/bin:$PATH"
             - composer validate --no-check-all --ansi --no-interaction
             - composer selfupdate
-            - COMPOSER_MEMORY_LIMIT=1024M composer update symfony/http-kernel
-            - COMPOSER_MEMORY_LIMIT=1024M composer update -vvv
+            - COMPOSER_MEMORY_LIMIT=1280M composer update symfony/http-kernel
+            - COMPOSER_MEMORY_LIMIT=1280M composer update -vvv
