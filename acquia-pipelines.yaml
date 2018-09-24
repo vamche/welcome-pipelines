@@ -19,4 +19,5 @@ events:
             - export PATH="$HOME/.composer/vendor/bin:$SOURCE_DIR/vendor/bin:$PATH"
             - composer validate --no-check-all --ansi --no-interaction
             - composer selfupdate
+            - composer update symfony/http-kernel
             - composer update -vvv
