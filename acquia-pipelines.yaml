@@ -19,3 +19,4 @@ events:
             - export PATH="$HOME/.composer/vendor/bin:$SOURCE_DIR/vendor/bin:$PATH"
             - composer validate --no-check-all --ansi --no-interaction
             - rm -rf vendor && composer clear-cache && composer update -vvv
+            - echo 'Success!'
