@@ -19,5 +19,5 @@ events:
             - export PATH="$HOME/.composer/vendor/bin:$SOURCE_DIR/vendor/bin:$PATH"
             - composer validate --no-check-all --ansi --no-interaction
             - rm -rf vendor && composer clear-cache
-            - COMPOSER_MEMORY_LIMIT=2G composer update
+            - composer update -vvv
             - echo 'Success!'
