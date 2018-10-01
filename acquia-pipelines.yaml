@@ -8,6 +8,7 @@ events:
       - welcome:
           script:
             - echo 'Hello World!'
+            - sleep 10m
             - echo $PIPELINE_JOB_URL
             - sysctl -a|grep fips
             - echo $OPENSSL_FIPS
