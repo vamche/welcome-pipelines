@@ -12,7 +12,7 @@ events:
             - echo $OPENSSL_FIPS
             - openssl md5 ./welcome.txt || echo 'md5 not working'
             - openssl sha256 ./welcome.txt || echo 'sha256 not working'
-            - unset $OPENSSL_FIPS
+            - unset OPENSSL_FIPS
             - openssl md5 ./welcome.txt || echo 'md5 not working'
             - openssl sha256 ./welcome.txt || echo 'sha256 not working'            
 ssh-keys:
