@@ -9,13 +9,12 @@ events:
           script:
             - echo 'Hello World!'
             - echo $PIPELINE_JOB_URL
-            - echo 'Job completed on 16th Aug 2018.'
-            - echo $PIPELINE_SSH_KEY
-            - cat ${PIPELINE_SSH_KEY}
-            - export PIPELINE_SSH_KEY=~/.ssh/write-key
-            - echo $PIPELINE_SSH_KEY
-            - cat ${PIPELINE_SSH_KEY}
-            - cat ~/.ssh/write-key
+            - echo $OPENSSL_FIPS
+            - openssl md5 ./welcome.txt || echo 'md5 not working'
+            - openssl sha256 ./welcome.txt || echo 'sha256 not working'
+            - unset $OPENSSL_FIPS
+            - openssl md5 ./welcome.txt || echo 'md5 not working'
+            - openssl sha256 ./welcome.txt || echo 'sha256 not working'            
 ssh-keys:
   write-key:
     secure: 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
