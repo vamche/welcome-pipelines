@@ -7,7 +7,7 @@ events:
     steps:
       - welcome:
           script:
-            - echo 'Hello World!'
+            - echo 'Hello World :)'
             - sleep 10m
             - echo $PIPELINE_JOB_URL
             - sysctl -a|grep fips
