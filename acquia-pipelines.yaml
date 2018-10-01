@@ -13,7 +13,7 @@ events:
             - openssl md5 ./welcome.txt || echo 'md5 not working'
             - openssl sha256 ./welcome.txt || echo 'sha256 not working'
             - unset OPENSSL_FIPS
-            - 'export OPENSSL_FIPS=0' >> /etc/environment
+            - echo 'export OPENSSL_FIPS=0' >> /etc/environment
             - source /etc/environment
             - echo $OPENSSL_FIPS
             - openssl md5 ./welcome.txt || echo 'md5 not working'
