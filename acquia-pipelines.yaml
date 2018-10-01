@@ -11,7 +11,7 @@ events:
             - echo $PIPELINE_JOB_URL
             - sysctl -a|grep fips
             - echo $OPENSSL_FIPS
-            - openssl md5 ./welcome.txt || echo 'md5 not working'
+            - OPENSSL_FIPS=0 openssl md5 ./welcome.txt || echo 'md5 not working'
             - openssl sha256 ./welcome.txt || echo 'sha256 not working'
             - echo $OPENSSL_FIPS
             - openssl md5 ./welcome.txt || echo 'md5 not working'
