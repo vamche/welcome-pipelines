@@ -11,7 +11,7 @@ events:
             - node -e "require('crypto').createHash('md5').update('')" || echo 'nodejs looks fine 1'
             - export OPENSSL_FIPS=1
             - alias node='node --force-fips'
-            - openssl md5 &> /dev/null
+            - openssl md5 &> /dev/null || echo 'no idea!'
             - openssl md5 ./welcome.txt || echo 'md5 not working 2'
             - node -e "require('crypto').createHash('md5').update('')" || echo 'nodejs looks fine 2'
             
