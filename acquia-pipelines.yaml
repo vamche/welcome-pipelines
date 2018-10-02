@@ -10,7 +10,7 @@ events:
             - echo 'Hello World :P'
             - node --version
             - node -p process.versions.openssl
-            - alias node='node --force-fips'
+            - alias node='node'
             - echo $PIPELINE_JOB_URL
             - echo $OPENSSL_FIPS
             - openssl md5 ./welcome.txt || echo 'md5 not working'
