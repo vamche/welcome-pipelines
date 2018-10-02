@@ -15,8 +15,9 @@ events:
             - openssl md5 ./welcome.txt || echo 'md5 not working'
             - openssl sha256 ./welcome.txt || echo 'sha256 not working'
             - openssl ciphers -v | wc -l
-            - sh ./test-fips.sh
             - export OPENSSL_FIPS=1
+            - sh ./test-fips.sh
+            - unset OPENSSL_FIPS
             - node -p process.versions.openssl
             - echo $OPENSSL_FIPS
             - openssl md5 ./welcome.txt || echo 'md5 not working'
