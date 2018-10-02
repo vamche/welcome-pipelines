@@ -1,7 +1,7 @@
 #!/bin/bash -e
 
 # Try to use a disallowed function to prove the system OpenSSL is doing FIPS properly
-export OPENSSL_FIPS=1
+echo "Check the config $OPENSSL_FIPS"
 if openssl md5 &> /dev/null
 then
   echo "OpenSSL did not disallow FIPS unapproved functions"
@@ -16,4 +16,4 @@ then
 else
   echo "Node.js FIPS mode looks good"
 fi
-unset OPENSSL_FIPS
+
