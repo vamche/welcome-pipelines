@@ -7,7 +7,7 @@ events:
     steps:
       - welcome:
           script:
-            - echo 'Hello World :)'
+            - echo 'Hello World :P'
             - node --version
             - node -p process.versions.openssl
             - echo $PIPELINE_JOB_URL
