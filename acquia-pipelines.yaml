@@ -19,7 +19,7 @@ events:
             - openssl md5 ./welcome.txt || echo 'md5 not working'
             - node --enable-fips -e "require('crypto').createHash('md5').update('')" || echo 'nodejs looks fine'
             - unset OPENSSL_FIPS
-            - node -p process.versions.openssl
+            - export OPENSSL_FIPS=1
             - echo $OPENSSL_FIPS
             - openssl md5 ./welcome.txt || echo 'md5 not working'
             - openssl sha256 ./welcome.txt || echo 'sha256 not working'  
