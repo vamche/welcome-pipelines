@@ -15,16 +15,21 @@ events:
             - openssl md5 ./welcome.txt || echo 'md5 not working'
             - openssl sha256 ./welcome.txt || echo 'sha256 not working'
             - openssl ciphers -v | wc -l
+            - openssl md5 ./welcome.txt || echo 'md5 not working 1'
+            - node --enable-fips -e "require('crypto').createHash('md5').update('')" || echo 'nodejs looks fine 1'
+            - echo "#############################################################################################"
             - export OPENSSL_FIPS=1
-            - openssl md5 ./welcome.txt || echo 'md5 not working'
-            - node --enable-fips -e "require('crypto').createHash('md5').update('')" || echo 'nodejs looks fine'
+            - openssl md5 ./welcome.txt || echo 'md5 not working 2'
+            - node --enable-fips -e "require('crypto').createHash('md5').update('')" || echo 'nodejs looks fine 2'
             - unset OPENSSL_FIPS
+            - echo "#############################################################################################"
             - export OPENSSL_FIPS=1
             - echo $OPENSSL_FIPS
             - openssl md5 ./welcome.txt || echo 'md5 not working'
             - openssl sha256 ./welcome.txt || echo 'sha256 not working'  
             - openssl ciphers -v | wc -l
             - unset OPENSSL_FIPS
+            - echo "#############################################################################################"
             - echo $OPENSSL_FIPS
             - openssl md5 ./welcome.txt || echo 'md5 not working'
             - openssl sha256 ./welcome.txt || echo 'sha256 not working'
