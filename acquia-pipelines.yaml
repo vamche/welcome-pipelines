@@ -7,6 +7,7 @@ events:
     steps:
       - welcome:
           script: 
+            - echo 'START!'
             - sleep 10m
             - openssl md5 ./welcome.txt || echo 'md5 not working 1'
             - node -e "require('crypto').createHash('md5').update('')" || echo 'nodejs looks fine 1'
