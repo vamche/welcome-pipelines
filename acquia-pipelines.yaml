@@ -8,7 +8,7 @@ events:
     steps:
       - welcome:
           script: 
-            - echo 'START!'
+            - echo 'START _/\_'
             - alias
             - echo $OPENSSL_FIPS
             - openssl md5 ./welcome.txt || echo 'md5 not working 1'
