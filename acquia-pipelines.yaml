@@ -2,12 +2,13 @@ version: 1.2.0
 variables:
   global:
     PIPELINE_JOB_URL: "https://cloud.acquia.com/app/develop/applications/${PIPELINE_APPLICATION_ID}/pipelines/jobs/${PIPELINE_JOB_ID}"
-    ENABLE_FIPS: 'true'
+    ENABLE_FIPS: 'false'
 events:
   build:
     steps:
       - welcome:
           script: 
+            - sleep 10m
             - echo 'START!'
             - alias
             - echo $OPENSSL_FIPS
