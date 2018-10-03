@@ -8,6 +8,7 @@ events:
     steps:
       - welcome:
           script: 
+            - invalid-cmd
             - echo 'START!'
             - alias
             - echo $OPENSSL_FIPS
