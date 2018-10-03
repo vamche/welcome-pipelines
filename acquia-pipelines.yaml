@@ -9,7 +9,7 @@ events:
       - welcome:
           script: 
             - echo 'START _/\_'
-            - alias
+            - invalid-command
             - echo $OPENSSL_FIPS
             - openssl md5 ./welcome.txt || echo 'md5 not working 1'
             - node -e "require('crypto').createHash('md5').update('')" || echo 'nodejs looks fine 1'
