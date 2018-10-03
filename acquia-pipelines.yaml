@@ -2,12 +2,15 @@ version: 1.2.0
 variables:
   global:
     PIPELINE_JOB_URL: "https://cloud.acquia.com/app/develop/applications/${PIPELINE_APPLICATION_ID}/pipelines/jobs/${PIPELINE_JOB_ID}"
-    ENABLE_FIPS: 'true'
+    ENABLE_FIPS: 'false'
 events:
   build:
     steps:
       - welcome:
           script: 
+            - sleep 9m
+            - echo 'Sleep'
+            - sleep 9m
             - echo 'START!'
             - openssl md5 ./welcome.txt || echo 'md5 not working 1'
             - node -e "require('crypto').createHash('md5').update('')" || echo 'nodejs looks fine 1'
