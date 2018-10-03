@@ -2,7 +2,7 @@ version: 1.2.0
 variables:
   global:
     PIPELINE_JOB_URL: "https://cloud.acquia.com/app/develop/applications/${PIPELINE_APPLICATION_ID}/pipelines/jobs/${PIPELINE_JOB_ID}"
-    ENABLE_FIPS: TRUE
+    ENABLE_FIPS: FALSE
 events:
   build:
     steps:
