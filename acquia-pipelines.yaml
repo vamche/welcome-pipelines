@@ -8,11 +8,6 @@ events:
     steps:
       - welcome:
           script: 
-            - sleep 10m
-            - echo 'zzzZZ'
-            - sleep 10m
-            - echo 'more zzzZZZZ'
-            - sleep 10m
             - echo 'START ***'
             - echo $OPENSSL_FIPS
             - openssl md5 ./welcome.txt || echo 'md5 not working 1'
