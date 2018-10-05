@@ -2,15 +2,18 @@ version: 1.2.0
 variables:
   global:
     PIPELINE_JOB_URL: "https://cloud.acquia.com/app/develop/applications/${PIPELINE_APPLICATION_ID}/pipelines/jobs/${PIPELINE_JOB_ID}"
-    ENABLE_FIPS: TRUE
+    ENABLE_FIPS: FALSE
 events:
   build:
     steps:
       - welcome:
           script: 
-            - echo 'START ***'
+            - echo 'Check if Kernel is FIPS enabled'
+            - cat /proc/sys/crypto/fips_enabled
+            - echo 'Check if OpenSSL is running in FIPS mode'
             - echo $OPENSSL_FIPS
             - openssl md5 ./welcome.txt || echo 'md5 not working 1'
+            - echo 'Check if Nodejs is running in FIPS mode'
             - node -e "require('crypto').createHash('md5').update('')" || echo 'nodejs looks fine 1'            
 ssh-keys:
   write-key:
