@@ -12,4 +12,5 @@ events:
             - echo $OPENSSL_FIPS
             - alias
             - openssl version
+            - node --version
             - node -p process.versions.openssl
