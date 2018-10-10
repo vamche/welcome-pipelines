@@ -11,4 +11,5 @@ events:
             - 'nvm install v8.11.1'
             - 'nvm use 8.11.1'
             - 'node --version'
+            - 'node -p process.versions.openssl'
             - echo 'Done!'
