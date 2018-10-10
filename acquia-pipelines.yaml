@@ -8,7 +8,7 @@ events:
       - welcome:
           script:
             - echo 'Hello World!'
-            - 'nvm install v8.11.1'
+            - 'nvm install v8.11.1 --openssl-fips'
             - 'nvm use 8.11.1'
             - 'node --version'
             - 'node -p process.versions.openssl'
