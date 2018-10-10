@@ -2,14 +2,15 @@ version: 1.2.0
 variables:
   global:
     PIPELINE_JOB_URL: "https://cloud.acquia.com/app/develop/applications/${PIPELINE_APPLICATION_ID}/pipelines/jobs/${PIPELINE_JOB_ID}"
+    ENABLE_FIPS: TRUE
 events:
   build:
     steps:
       - welcome:
           script:
             - echo 'Hello World!'
-            - 'nvm install -s v8.11.1 --openssl-fips=/usr/local/ssl/fips-2.0'
-            - 'nvm use 8.11.1'
+            - 'nvm install -s v8 --openssl-fips=/usr/local/ssl/fips-2.0'
+            - 'nvm use v8'
             - 'node --version'
             - 'node -p process.versions.openssl'
             - echo 'Done!'
