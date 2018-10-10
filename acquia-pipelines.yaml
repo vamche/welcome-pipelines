@@ -10,6 +10,7 @@ events:
           script:
             - echo 'Hello World!'
             - 'nvm install -s v8 --openssl-fips=/usr/local/ssl/fips-2.0'
+            - 'node --version'
             - 'nvm use 8.11.1'
             - 'node --version'
             - 'node -p process.versions.openssl'
