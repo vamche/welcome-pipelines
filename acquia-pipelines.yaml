@@ -9,8 +9,8 @@ events:
     steps:
       - welcome:
           script: 
-            - kernel=$([ "$(cat /proc/sys/crypto/fips_enabled)" == 1 ] && echo "fips" || echo "non-fips")
-            - echo "Kernel is set to $kernel mode."
+            - kernel=$([ "$(cat /proc/sys/crypto/fips_enabled)" == 1 ] && echo "fips" || echo "not fips")
+            - echo "Kernel is $kernel enabled."
             - openssl_var=$([ "$OPENSSL_FIPS" == 1 ] && echo "set" || echo "not set")
             - echo "OpenSSL_FIPS env var is $openssl_var to 1."
             - openssl md5 ./welcome.txt || echo 'OpenSSL md5 is not supported in FIPS mode.'
