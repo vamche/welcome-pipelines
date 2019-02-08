@@ -8,9 +8,8 @@ events:
     steps:
       - welcome:
           script:
-            - echo 'Hello World!'
-            - echo $OPENSSL_FIPS
-            - alias
-            - openssl version
-            - node --version
-            - node -p process.versions.openssl
+            - pwd
+            - cd $SOURCE_DIR
+            - pwd
+            - ls -al
+            
