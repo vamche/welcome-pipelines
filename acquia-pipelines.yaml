@@ -11,8 +11,4 @@ events:
       - welcome:
           script:
             - pwd
-            - cd $SOURCE_DIR
-            - pwd
-            - ls -al
-            - cat acquia-pipelines.yaml
             
