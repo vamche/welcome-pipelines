@@ -11,4 +11,5 @@ events:
       - welcome:
           script:
             - pwd
+            - mysql -v
             
