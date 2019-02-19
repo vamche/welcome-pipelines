@@ -1,4 +1,6 @@
 version: 1.2.0
+services:
+  - mysql
 variables:
   global:
     PIPELINE_JOB_URL: "https://cloud.acquia.com/app/develop/applications/${PIPELINE_APPLICATION_ID}/pipelines/jobs/${PIPELINE_JOB_ID}"
