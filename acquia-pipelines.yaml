@@ -1,16 +1,50 @@
-version: 1.2.0
-variables:
-  global:
-    PIPELINE_JOB_URL: "https://cloud.acquia.com/app/develop/applications/${PIPELINE_APPLICATION_ID}/pipelines/jobs/${PIPELINE_JOB_ID}"
-    ENABLE_FIPS: TRUE
+version: 1.0.0
 events:
   build:
     steps:
-      - welcome:
+      - version_check:
           script:
-            - echo 'Hello World!'
-            - echo $OPENSSL_FIPS
-            - alias
-            - openssl version
-            - node --version
-            - node -p process.versions.openssl
+            - 'rm -f /tmp/version_check_failure'
+            - 'chmod 555 $SOURCE_DIR/check-versions.sh'
+            - '$SOURCE_DIR/check-versions.sh "php" "$(php --version)" "7.1.26"'
+            - '$SOURCE_DIR/check-versions.sh "acquia-yaml" "$(gem list acquia-yaml)" "1.0.4"'
+            - '$SOURCE_DIR/check-versions.sh "composer" "$(composer --no-ansi --version)" "1.8.4"'
+            - '$SOURCE_DIR/check-versions.sh "ssh" "$(ssh -V 2>&1)" "OpenSSH_7.2p2"'
+            - '$SOURCE_DIR/check-versions.sh "rsync" "$(rsync --version)" "3.1.1"'
+            - '$SOURCE_DIR/check-versions.sh "nodejs" "$(node --version)" "v6.14.4"'
+            - '$SOURCE_DIR/check-versions.sh "git" "$(git --version)" "2.17.0"'
+            - '$SOURCE_DIR/check-versions.sh "unzip" "$(unzip -v)" "6.00"'
+            - '$SOURCE_DIR/check-versions.sh "bzip2" "$(bzip2 --version 2>&1 | head -n1)" "1.0.6"'
+            - '$SOURCE_DIR/check-versions.sh "gem" "$(gem --version)" "3.0.3"'
+            - '$SOURCE_DIR/check-versions.sh "npm" "$(npm --version)" "3.10.10"'
+            - '$SOURCE_DIR/check-versions.sh "drush default" "$(drush --version)" "8.1.18"'
+            - '$SOURCE_DIR/check-versions.sh "drush6" "$(drush6 --version)" "6.7.0"'
+            - '$SOURCE_DIR/check-versions.sh "drush7" "$(drush7 --version)" "7.4.0"'
+            - '$SOURCE_DIR/check-versions.sh "drush8" "$(drush8 --version)" "8.1.18"'
+            - '$SOURCE_DIR/check-versions.sh "wget" "$(wget --version)" "1.17"'
+            - '$SOURCE_DIR/check-versions.sh "mysql" "$(mysql --version)" "5.6.16"'
+            - '$SOURCE_DIR/check-versions.sh "patch" "$(patch --version)" "2.7.5"'
+            - '$SOURCE_DIR/check-versions.sh "nvm" "$(nvm --version)" "0.34.0"'
+            - '$SOURCE_DIR/check-versions.sh "google-chrome" "$(google-chrome --version)" "72.0.3626.121"'
+            - '$SOURCE_DIR/check-versions.sh "rbenv" "$(rbenv -v)" "1.1.1"'
+            - '$SOURCE_DIR/check-versions.sh "rbenv 2.3.x" "$(rbenv versions)" "2.3.8"'
+            - '$SOURCE_DIR/check-versions.sh "rbenv 2.4.x" "$(rbenv versions)" "2.4.5"'
+            - '$SOURCE_DIR/check-versions.sh "bundler" "$(bundle --version)" "2.0.1"'
+            - '$SOURCE_DIR/check-versions.sh "fontconfig" "$(fc-list --version 2>&1)" "2.11.94"'
+            - '$SOURCE_DIR/check-versions.sh "imagemagick" "$(convert --version 2>&1)" "6.8.9-9"'
+            - 'echo "Checking php extension versions..."'
+            - 'php $SOURCE_DIR/check-php-extensions-versions.php'
+            - 'php7.2 $SOURCE_DIR/check-php72-extensions-versions.php'
+            # The PHP pcntl extension does not have a version string.
+            - '$SOURCE_DIR/check-versions.sh "php pcntl extension" "$(php -m)" "pcntl"'
+            - '$SOURCE_DIR/check-versions.sh "php bcmath extension" "$(php -m)" "bcmath"'
+            - '$SOURCE_DIR/check-versions.sh "php xsl extension" "$(php -m)" "xsl"'
+            - '$SOURCE_DIR/check-versions.sh "php7.2 pcntl extension" "$(php7.2 -m)" "pcntl"'
+            - '$SOURCE_DIR/check-versions.sh "php7.2 bcmath extension" "$(php7.2 -m)" "bcmath"'
+            - '$SOURCE_DIR/check-versions.sh "php7.2 xsl extension" "$(php7.2 -m)" "xsl"'
+            # Fail this test if there were any failures.
+            - 'if [ -f /tmp/version_check_failure ]; then'
+            -   'echo "Failures in the version check:"'
+            -   'cat /tmp/version_check_failure'
+            -   'exit 1'
+            - 'fi'
