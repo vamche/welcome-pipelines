@@ -1,14 +1,15 @@
 version: 1.2.0
+
 services:
-  - mysql
-variables:
-  global:
-    PIPELINE_JOB_URL: "https://cloud.acquia.com/app/develop/applications/${PIPELINE_APPLICATION_ID}/pipelines/jobs/${PIPELINE_JOB_ID}"
-    ENABLE_FIPS: TRUE
+  - php
+      version: 7.2
+
 events:
   build:
     steps:
-      - welcome:
+      # If you have build instructions, put them here. They are not required.
+      - build_site:
           script:
-            - pwd
-            
+            - touch docroot/index.html
+            - echo "You successfully deployed your build to an ODE" > docroot/index.html
+            - pipelines-deploy
