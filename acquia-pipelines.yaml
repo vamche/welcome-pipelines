@@ -1,4 +1,7 @@
 version: 1.2.0
+services:
+  - php:
+     version: 7.2
 variables:
   global:
     PIPELINE_JOB_URL: "https://cloud.acquia.com/app/develop/applications/${PIPELINE_APPLICATION_ID}/pipelines/jobs/${PIPELINE_JOB_ID}"
@@ -8,5 +11,4 @@ events:
       - welcome:
           script:
             - echo 'Hello Worldi'
-            - echo $PIPELINE_JOB_URL
-            - echo 'Job completed 6th August 2018 GH!'
+            - php -v
