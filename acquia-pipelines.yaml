@@ -11,5 +11,5 @@ events:
       - build_site:
           script:
             - touch docroot/index.html
-            - echo "You successfully deployed your build to an ODE" > docroot/index.html
+            - echo "You successfully deployed your build to an ODE at 13:51 13th March" > docroot/index.html
             - pipelines-deploy
