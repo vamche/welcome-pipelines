@@ -10,5 +10,5 @@ events:
     steps:
       - welcome:
           script:
-            - echo 'Hello Worldi'
+            - echo 'Hello World at 13:52 13th March!'
             - php -v
