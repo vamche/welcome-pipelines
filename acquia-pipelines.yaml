@@ -9,5 +9,9 @@ events:
       # If you have build instructions, put them here. They are not required.
       - build_site:
           script:
-            - nvm install -s v8.11.1 --enable-fips
+            - nvm list
+            - node --version 
+            - nvm install -s v8.11.1 --openssl-fips=/usr/local/ssl/fips-2.0
+            - nvm use 8.11.1
+            - nvm list
             - node --version
