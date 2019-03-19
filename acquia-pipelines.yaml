@@ -1,15 +1,13 @@
 version: 1.2.0
 
-services:
-  - php:
-      version: 7.2
-
+variables:
+  global:
+    ENABLE_FIPS: TRUE
 events:
   build:
     steps:
       # If you have build instructions, put them here. They are not required.
       - build_site:
           script:
-            - touch docroot/index.html
-            - echo "You successfully deployed your build to an ODE at 13:51 13th March" > docroot/index.html
-            - pipelines-deploy
+            - nvm install -s v8.11.1 --enable-fips
+            - node --version
