@@ -17,3 +17,4 @@ events:
             - mysql -u root -proot -e "show variables like '%timeout'"
             - mysql -u root -proot -e "show variables like '%max_allowed_packet'"
             - mysql -u root -proot -e "show variables like '%innodb_log_file_size'"
+            - cat /etc/mysql/my.cnf
