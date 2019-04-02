@@ -1,16 +1,21 @@
 version: 1.2.0
 variables:
   global:
-    PIPELINE_JOB_URL: "https://cloud.acquia.com/app/develop/applications/${PIPELINE_APPLICATION_ID}/pipelines/jobs/${PIPELINE_JOB_ID}"
     ENABLE_FIPS: TRUE
 events:
   build:
     steps:
-      - welcome:
+      # If you have build instructions, put them here. They are not required.
+      - build_site:
           script:
-            - echo 'Hello World!'
-            - echo $OPENSSL_FIPS
-            - alias
-            - openssl version
-            - node --version
-            - node -p process.versions.openssl
+            - touch docroot/index.html
+            - echo "Pipelines examples 2019.04.02. You successfully deployed your build to an ODE" > docroot/index.html
+  post-deploy:
+    steps:
+      # Deploy the build artifact to a Cloud on-demand environment.
+      - deploy:
+          script:
+            - pipelines-deploy          
+            
+            
+  
