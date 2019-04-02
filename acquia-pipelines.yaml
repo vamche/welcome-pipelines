@@ -1,7 +1,7 @@
 version: 1.2.0
 services:
   - php:
-      version: 7.2
+      version: 7.1
 variables:
   global:
     ENABLE_FIPS: TRUE
