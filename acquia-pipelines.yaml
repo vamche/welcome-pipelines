@@ -18,7 +18,8 @@ events:
       # Deploy the build artifact to a Cloud on-demand environment.
       - deploy:
           script:
-            - pipelines-deploy          
+            - pipelines-deploy
+            - non-working-cmd
             
             
   
