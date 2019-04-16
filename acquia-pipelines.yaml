@@ -1,7 +1,7 @@
 version: 1.2.0
 services:
   - php:
-      version: 7.2
+      version: 7.1
 variables:
   global:
     ENABLE_FIPS: TRUE
@@ -9,6 +9,9 @@ events:
   build:
     steps:
       # If you have build instructions, put them here. They are not required.
+      - printenv:
+          script:
+            - printenv
       - build_site:
           script:
             - touch docroot/index.html
@@ -19,6 +22,9 @@ events:
       - deploy:
           script:
             - pipelines-deploy
+     - printenv:
+          script:
+            - printenv       
             
             
   
