@@ -22,7 +22,7 @@ events:
       - deploy:
           script:
             - pipelines-deploy
-     - printenv:
+      - printenv:
           script:
             - printenv       
             
