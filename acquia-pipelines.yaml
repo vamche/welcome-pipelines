@@ -8,7 +8,7 @@ events:
     steps:
       - welcome:
           script:
-            - echo 'Hello World!'
+            - echo 'Hello World'
             - echo $OPENSSL_FIPS
             - alias
             - openssl version
