@@ -11,7 +11,7 @@ events:
       - build_site:
           script:
             - touch docroot/index.html
-            - echo "You successfully deployed your build to an ODE SYNC" > docroot/index.html
+            - echo "You successfully deployed your build to an ODE SYNC." > docroot/index.html
 
   post-deploy:
     steps:
