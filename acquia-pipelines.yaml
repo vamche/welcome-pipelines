@@ -3,6 +3,10 @@ version: 1.2.0
 cde-databases:
   - db1
   - db2
+  
+variables:
+  global:
+    PIPELINES_DEPLOY_DEBUG: 1
 
 events:
   build:
