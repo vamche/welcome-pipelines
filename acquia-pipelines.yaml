@@ -7,6 +7,10 @@ cde-databases:
 variables:
   global:
     PIPELINES_DEPLOY_DEBUG: 1
+    CDE_DEPLOY_POLL_TIMEOUT: 1400
+    CDE_DEPLOY_POLL_INTERVAL: 6
+    SYNC_DB_POLL_TIMEOUT: 70
+    SYNC_DB_POLL_TIMEOUT: 5
 
 events:
   build:
