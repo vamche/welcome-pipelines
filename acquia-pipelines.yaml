@@ -7,7 +7,7 @@ cde-databases:
 variables:
   global:
     PIPELINES_DEPLOY_DEBUG: 1
-    CDE_DEPLOY_POLL_TIMEOUT: '10000000'
+    CDE_DEPLOY_POLL_TIMEOUT: '100000000'
     SYNC_DB_POLL_TIMEOUT: 100000
 
 events:
