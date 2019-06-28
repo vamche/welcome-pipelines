@@ -6,8 +6,8 @@ cde-databases:
   
 variables:
   global:
-    CDE_DEPLOY_POLL_TIMEOUT: 10
-    SYNC_DB_POLL_TIMEOUT: 10
+    CDE_DEPLOY_POLL_TIMEOUT: 240
+    SYNC_DB_POLL_TIMEOUT: 5
 
 events:
   build:
