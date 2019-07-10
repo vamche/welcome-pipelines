@@ -1,0 +1,8 @@
+{
+    "name": "acquia/hw",
+    "description": "Hello world!",
+    "type": "project",
+    "require": {
+        "composer/installers": "^1.0.20"
+    }
+}
