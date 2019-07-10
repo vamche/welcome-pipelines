@@ -1,5 +1,10 @@
 version: 1.0.0
 
+services:
+  - php:
+      version: 7.3
+  - mysql
+
 events:
   build:
     steps:
@@ -8,5 +13,6 @@ events:
           script:
             - echo 'HW!'
             - php -v
+            - mysql --version
 
 
