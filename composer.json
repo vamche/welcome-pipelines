@@ -4,6 +4,7 @@
     "type": "project",
     "require": {
         "composer/installers": "^1.0.20",
-        "leafo/scssphp-compass": "dev-master"
+        "leafo/scssphp-compass": "dev-master",
+        "leafo/scssphp": "dev-master"
     }
 }
