@@ -3,6 +3,7 @@
     "description": "Hello world!",
     "type": "project",
     "require": {
-        "composer/installers": "^1.0.20"
+        "composer/installers": "^1.0.20",
+        "leafo/scssphp-compass": "dev-master"
     }
 }
