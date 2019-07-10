@@ -27,7 +27,6 @@ events:
           type: script
           script:
             - composer install
-            - compass compile docroot/themes/custom/MY_THEME
             - mysql -u root -proot -e "CREATE DATABASE drupal"
       - test:
           type: script
