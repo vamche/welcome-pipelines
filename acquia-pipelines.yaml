@@ -25,7 +25,7 @@ events:
       - deploy:
           script:
             - date +"%T"
-            - pipelines-sync-dbs || echo 'INVALID USAGE?'
+            - pipelines-sync-dbs db1 || echo 'INVALID USAGE?'
             - pipelines-deploy
             - pipelines-sync-dbs db1 db2
             - date +"%T"
