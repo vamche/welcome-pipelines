@@ -32,4 +32,15 @@ events:
           type: script
           script:
             - ./vendor/bin/phpunit      
+            
+  pr-merged:
+    steps:
+      - merge:
+          script:
+            - echo 'merge!'
+  pr-closed:
+    steps:
+      - close:
+          script:
+            - echo 'close!'            
           
