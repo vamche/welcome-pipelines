@@ -49,3 +49,4 @@ events:
           type: script
           script:
             - echo 'deploy?'
+            - asdfsdfasdf
