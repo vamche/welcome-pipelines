@@ -15,7 +15,6 @@ events:
       - deploy:
           script:
             - pipelines-deploy
-            - asdfasdf
 
   # When a GitHub pull request is merged, this deletes the coresponding ODE.
   pr-merged:
