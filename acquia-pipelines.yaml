@@ -38,10 +38,14 @@ events:
           type: script
           script:
             - echo 'Start!?'
-            - composer validate --no-check-all --ansi
-            - composer install
             - mysql -u root -proot -e "CREATE DATABASE drupal"
       - test:
           type: script
           script:
-            - ./vendor/bin/phpunit
+            - echo 'test'
+  post-deploy:
+    steps:
+      - deploy:
+          type: script
+          script:
+            - echo 'deploy?'
