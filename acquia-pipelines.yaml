@@ -5,13 +5,6 @@ variables:
     CDE_DEPLOY_POLL_TIMEOUT: 10000000
     SYNC_DB_POLL_TIMEOUT: 100000
 
-version: 1.2.0
-  
-variables:
-  global:
-    CDE_DEPLOY_POLL_TIMEOUT: 10000000
-    SYNC_DB_POLL_TIMEOUT: 100000
-
 events:
   build:
     steps:
@@ -46,4 +39,3 @@ events:
             - sleep 5m
             - echo '65'
             - echo 'End'
-
