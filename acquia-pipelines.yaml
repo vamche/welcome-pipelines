@@ -13,5 +13,29 @@ events:
           script:
             - echo 'Start'
             - sleep 5m
-            - sleep 2m
+            - echo '5'
+            - sleep 5m
+            - echo '10'
+            - sleep 5m
+            - echo '15'
+            - sleep 5m
+            - echo '20'
+            - sleep 5m
+            - echo '25'
+            - sleep 5m
+            - echo '30'
+            - sleep 5m
+            - echo '35'
+            - sleep 5m
+            - echo '40'
+            - sleep 5m
+            - echo '45'
+            - sleep 5m
+            - echo '50'
+            - sleep 5m
+            - echo '55'
+            - sleep 5m
+            - echo '60'
+            - sleep 5m
+            - echo '65'
             - echo 'End'
