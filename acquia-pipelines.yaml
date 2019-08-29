@@ -13,4 +13,6 @@ events:
           script:
             - echo 'Start'
             - sleep 7m
+            - sleep 7m
+            - sleep 7m
             - echo 'End'
