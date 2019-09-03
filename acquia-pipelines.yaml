@@ -17,7 +17,7 @@ events:
           script:
             - touch docroot/index.html
             - echo "Test!"
-            - echo "You successfully deployed your build to an ODE SYNC PR!." > docroot/index.html
+            - echo "You successfully deployed your build to an ODE SYNC PR." > docroot/index.html
 
   post-deploy:
     steps:
