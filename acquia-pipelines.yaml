@@ -3,12 +3,6 @@ version: 1.2.0
 cde-databases:
   - db1
   - db2
-  
-variables:
-  global:
-    CDE_DEPLOY_POLL_TIMEOUT: 'asd'
-    SYNC_DB_POLL_TIMEOUT: 'jhhh'
-    PIPELINES_DEPLOY_DEBUG: true
 
 events:
   build:
@@ -18,7 +12,7 @@ events:
           script:
             - touch docroot/index.html
             - echo "Test!"
-            - echo "You successfully deployed your build to an ODE SYNCDB MASTER." > docroot/index.html
+            - echo "You successfully deployed your build to an ODE SYNCDB +PR." > docroot/index.html
 
   post-deploy:
     steps:
