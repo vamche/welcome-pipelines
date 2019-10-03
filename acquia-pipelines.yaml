@@ -1,5 +1,9 @@
 version: 1.3.0
 
+cde-databases:
+  - db2
+  - db1
+
 events:
   build:
     steps:
@@ -16,9 +20,8 @@ events:
       - deploy:
           script:
             - date +"%T"
-            - pipelines-sync-dbs db1 || echo 'INVALID USAGE?'
             - pipelines-deploy
-            - pipelines-sync-dbs db1 db2
+            - pipelines-sync-dbs db3 db4 || echo "Fails to sync dbs other than ${CDE_DATABASES}"
             - date +"%T"
 
   # When a GitHub pull request is merged, this deletes the coresponding ODE.
