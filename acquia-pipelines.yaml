@@ -34,6 +34,7 @@ events:
       # If you have build instructions, put them here. They are not required.
       - build_site:
           script:
+            - sshd -V
             - echo $var1
             - echo $var2
             - touch docroot/index.html
