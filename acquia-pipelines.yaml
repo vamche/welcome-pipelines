@@ -21,11 +21,11 @@ events:
       # Deploy the build artifact to a Cloud on-demand environment.
       - deploy:
           script:
-            - pipelines-deploy
+            # - pipelines-deploy
             # Get Authentication token
             - TOKEN=$(curl -sS -X POST -u "${CLOUD_API_KEY}:${CLOUD_API_SECRET}" -d "grant_type=client_credentials" https://accounts.acquia.com/api/auth/oauth/token | python -c "import sys, json; print json.load(sys.stdin)['access_token']")
             # API call 
-            - curl -X GET https://cloud.acquia.com/api/environments/31099-d6a43c82-cc6e-4426-b6eb-883cbe4a99ea -H "Content-Type: application/json" -H "Authorization: Bearer ${TOKEN}" 
+            - 'curl -X GET https://cloud.acquia.com/api/environments/31099-d6a43c82-cc6e-4426-b6eb-883cbe4a99ea -H "Content-Type: application/json" -H "Authorization: Bearer ${TOKEN}"' 
             - cat $PIPELINES_SCRIPT_DATA_FILE
   # When a GitHub pull request is merged, this deletes the coresponding ODE.
   pr-merged:
