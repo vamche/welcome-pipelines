@@ -12,8 +12,23 @@ ENV_ID=$(curl -sS -X GET "https://cloud.acquia.com/api/applications/$PIPELINE_AP
 
 # Get Stage id
 STAGE_ENV_ID=$(curl -sS -X GET "https://cloud.acquia.com/api/applications/$PIPELINE_APPLICATION_ID/environments" -H "Content-Type: application/json" -H "Authorization: Bearer ${TOKEN}" | python -c "import sys, json; envs=json.load(sys.stdin)['_embedded']['items']; print [x for x in envs if x['name'] == 'test'][0]['id']")
-# STAGE_ENV_ID=31098-d6a43c82-cc6e-4426-b6eb-883cbe4a99ea
-echo $STAGE_ENV_ID
 
-# Copy files
-curl -v -X POST "https://cloud.acquia.com/api/environments/$ENV_ID/files" -d "{'source':$STAGE_ENV_ID}" -H "Content-Type: application/json" -H "Authorization: Bearer ${TOKEN}"
+# Copy Files
+NOTIFICATION_LINK=$(curl -sS -X POST -d "{\"source\":\"$STAGE_ENV_ID\"}" "https://cloud.acquia.com/api/environments/$ENV_ID/files" -H "Content-Type: application/json" -H "Authorization: Bearer ${TOKEN}" | python -c "import sys, json; print json.load(sys.stdin)['_links']['notification']['href']")
+# curl -v -X POST "https://cloud.acquia.com/api/environments/$ENV_ID/files" -d "{\"source\":\"$STAGE_ENV_ID\"}" -H "Content-Type: application/json" -H "Authorization: Bearer ${TOKEN}"
+echo $NOTIFICATION_LINK
+
+# Wait for copy to finish.
+# Poll NOTIFICATION_LINK to know the status
+COPY_STATUS='in-progress'
+
+while [ $COPY_STATUS == 'in-progress' ]; do
+  echo $COPY_STATUS;
+  sleep 10;
+  COPY_STATUS=$(curl -sS -X GET $NOTIFICATION_LINK -H "Content-Type: application/json" -H "Authorization: Bearer ${TOKEN}" | python -c "import sys, json; print json.load(sys.stdin)['status']");
+done
+
+if [ $COPY_STATUS == 'failed' ]
+then
+  exit 1
+fi
