@@ -1,7 +1,8 @@
 version: 1.0.0
 
 cde-databases:	
-  - db1	
+  - db1
+  - db2
   
 variables:
   global:
