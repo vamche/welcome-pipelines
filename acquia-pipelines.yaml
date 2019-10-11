@@ -1,13 +1,15 @@
 version: 1.0.0
 
-
-
+cde-databases:	
+  - db1	
+  
 variables:
   global:
     CLOUD_API_KEY:
       secure: 2acQXt7OOLEUgTlegTLpmM+vq+HwkxqFq0VebvatKllxHejXLAfvRp0meTjE0r9kVi7oxk4MyKQ8+RhcNr2inYFHnS/FZnLJFwbkApK8mCQp+GdDIiZvp7e2mhHm7go9IDQUW10Umc1B1QKSDZ9/lKAUvvvoa2tu0UjtnwRTbzLsisoHi1ZLLiFbMUSyDsvZ/na3p0ypgRjAGbaFY6OCPYar/Bysl+qAwXLAeaQO58cotQEfb0L9QJT9WSmwY5uxneP0JYvpYdMYh72cUNr0uYue03NHMIOymWAO0XI+YI8FUcfhOzKsI4XDJ5wHy5UIX+lg5W2ho9qWQs1tQdeK17BQwj4ANdLpLlHytIe27XH9hLQX0HX6w8bx2G202VGd94wOHd88KaEp3GDS7BvSqbrcTKJEJwAKYgNBm+gUB1aOYmc7uR151JoaiDJpTTHKNoj9/pABOIccA16O0oPm4yU6sAIUn5I643Loqr1KG4X66fMoB4XzIlleZfa6XqEYEAQrgv0Ke3zBVNdg3PQZ/pLr3dphsQiWCGM65k7eED9/ZBcq+PUJRAF17oK0f3J+/mH81Rk5Lqf8wMJGc1eaASOo3ARjkhOffMblNR1RrCSW8vlsDOONGODu9k5BhjB2aMLGglHuaU5INcaEdLYf8DoofQFASw/yAJhLJ2HVzwFP8c=vgFfYyTDb3KBgT1NCzxmR+KKWSr469buLdOIKKwNgdT1ZK/QEgHpug8nLZRWG1RHWJouvZGWM5uwGaytsU6YczbWL/aZ07wfbbBSj8a4bZ6XCU7fEcCZvpLaqsrrTQ/L/jBQ8VJ8gxqCAakOvM0f3w==
     CLOUD_API_SECRET:
       secure: 2acGqhtu3GyQEsq3y9Hp73kykXcjqWTH+diHtwi2x8XF5QX7oKjs9kPnLKHzZFoceu3bbdv8lNaoZbdnpv53Oit5yfnrpd0Iw2gbMXjdYAoJZC7a2EO2FVon/OwkhyOy8FPcwtdiFKhYx/3tcn5XRcHqSwtU1xCupnk5Sw+m6n7yuOOgAXuIbBakvOewNhGNCddl7vDtk/lz3XZMGJ8O8PFMn52FD+rIqWLxe0dNxLdus3PQWfbWgqfUYFSZWZoIQtQfeyfaxmGZIgM9OoOSTgjIg4eydcnh31qBfCTLWfwBwPjnUMCN7uhieA+7r0Jb+TnNoxCHVFjn6ebDIUkUu3VEjrWRDDvW8xyITOc7ebRdUIkadSdKFlJdUdwu256cL1flGkA+6HWgk4SJ5HKzadG7SobkbvwfXI6vg2VtXi1iUYx57HDfFKBslWS55Co7uJpycR1wbqGGOljmrIyqAd/P3SeqZyN5mQeK/gdNDT/IDwSE62ZOibznupcUHKWix8dR6/QmCl4beMQK+xT2LylOFE8H7Ipfx/CZOxyKCl0xVfmAwECAKC6FLE0Cbd9ud5O+7LVjf4HGoUoujk2n8lUBCMxQoTHpTyVSFjEmKejVhcECpyLOVe/dYKnYtS69YhBdjIytZqb5Sv9OQfY59d1kbRu2iHqee49gyE53KFf9LI=HYnUQufH6bUXpX43Bh9bWxJHNH00jLat+GGcHrW4DMWOwLB0MLzhMik/JR6g87dqqdNY9ZoSZhvftVD4+phVR4YxTcxLE1qWP+kp1J2LW3oNjXykVEF6p3YM3dBF0cZlIPft7LVZLELrpNZxqfBJT7H/3+MkdJ27JbKqzNXURm4=
+
 events:
   build:
     steps:
@@ -25,10 +27,8 @@ events:
           script:
             - pipelines-deploy
             - TOKEN=$(curl -sS -X POST -u "${CLOUD_API_KEY}:${CLOUD_API_SECRET}" -d "grant_type=client_credentials" https://accounts.acquia.com/api/auth/oauth/token | python -c "import sys, json; print json.load(sys.stdin)['access_token']")
-            # API call 
-            # - 'ENV_ID=$(curl -X GET "https://cloud.acquia.com/api/applications/$PIPELINE_APPLICATION_ID/environments" -H "Content-Type: application/json" -H "Authorization: Bearer ${TOKEN}" | python -c "import sys, json; envs=json.load(sys.stdin)['_embedded']['items']; print [x for x in envs if x['name'] == '$PIPELINE_DEPLOY_VCS_PATH'][0]['id']")'
-            - ENV_ID=$(curl -sS -X GET -H "Authorization: Bearer ${TOKEN}" -H "Content-Type: application\/json" "https://cloud.acquia.com/api/applications/d6a43c82-cc6e-4426-b6eb-883cbe4a99ea/environments" | python -c "import sys, json; print json.load(sys.stdin)")
-            - echo $ENV_ID
+            - chmod +x ./copy-files.sh
+            - ./copy-files.sh
   # When a GitHub pull request is merged, this deletes the coresponding ODE.
   pr-merged:
     steps:
