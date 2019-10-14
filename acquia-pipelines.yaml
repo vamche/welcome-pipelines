@@ -18,7 +18,6 @@ events:
       - build_site:
           script:
             - touch docroot/index.html
-            - echo "Hello World!"
             - echo "You successfully deployed your build to an ODE SYNCDB master take a bow!!!" > docroot/index.html
 
   post-deploy:
