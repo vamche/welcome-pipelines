@@ -1,12 +1,11 @@
 #!/bin/bash
 set -e
-
 # This is a simple illustration to copy files from any source environment to target CDE.
 # Note: This script doesn't consider the token expiry or any API exceptions/errors.
 
 SOURCE_ENV_NAME='test'
 
-# Get Cloud Authentication token.
+# Get Cloud Authentication token. For more details: https://docs.acquia.com/acquia-cloud/develop/api/auth/
 TOKEN=$(curl -sS -X POST -u "${CLOUD_API_KEY}:${CLOUD_API_SECRET}" -d "grant_type=client_credentials" https://accounts.acquia.com/api/auth/oauth/token | python -c "import sys, json; print json.load(sys.stdin)['access_token']")
 
 # Get CDE Name created by the Pipelines Job.
@@ -19,7 +18,7 @@ TARGET_ENV_ID=$(curl -sS -X GET "https://cloud.acquia.com/api/applications/$PIPE
 SOURCE_ENV_ID=$(curl -sS -X GET "https://cloud.acquia.com/api/applications/$PIPELINE_APPLICATION_ID/environments" -H "Content-Type: application/json" -H "Authorization: Bearer ${TOKEN}" | python -c "import sys, json; envs=json.load(sys.stdin)['_embedded']['items']; print [x for x in envs if x['name'] == '$SOURCE_ENV_NAME'][0]['id']")
 
 # Copy Files from CDE to Source envronment to target. Use the notification url returned to get the tasks's status.
-NOTIFICATION_LINK=$(curl -sS -X POST -d "{\"source\":\"$STAGE_ENV_ID\"}" "https://cloud.acquia.com/api/environments/$TARGET_ENV_ID/files" -H "Content-Type: application/json" -H "Authorization: Bearer ${TOKEN}" | python -c "import sys, json; print json.load(sys.stdin)['_links']['notification']['href']")
+NOTIFICATION_LINK=$(curl -sS -X POST -d "{\"source\":\"$SOURCE_ENV_ID\"}" "https://cloud.acquia.com/api/environments/$TARGET_ENV_ID/files" -H "Content-Type: application/json" -H "Authorization: Bearer ${TOKEN}" | python -c "import sys, json; print json.load(sys.stdin)['_links']['notification']['href']")
 # curl -v -X POST "https://cloud.acquia.com/api/environments/$ENV_ID/files" -d "{\"source\":\"$STAGE_ENV_ID\"}" -H "Content-Type: application/json" -H "Authorization: Bearer ${TOKEN}"
 
 # Wait for 'FilesCopied' task to finish.
