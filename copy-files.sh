@@ -22,7 +22,7 @@ NOTIFICATION_LINK=$(curl -sS -X POST -d "{\"source\":\"$SOURCE_ENV_ID\"}" "https
 # curl -v -X POST "https://cloud.acquia.com/api/environments/$ENV_ID/files" -d "{\"source\":\"$STAGE_ENV_ID\"}" -H "Content-Type: application/json" -H "Authorization: Bearer ${TOKEN}"
 
 # Wait for 'FilesCopied' task to finish.
-# Poll NOTIFICATION_LINK to know the status
+# Poll NOTIFICATION_LINK to know the task status, the status will be 'in-progress' until the task is finished. For more details: https://cloudapi-docs.acquia.com/#/Notifications/getNotificationByUuid
 COPY_STATUS='in-progress'
 
 while [ $COPY_STATUS == 'in-progress' ]; do
