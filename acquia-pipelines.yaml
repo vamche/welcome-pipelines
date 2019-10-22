@@ -25,6 +25,7 @@ events:
       # Deploy the build artifact to a Cloud on-demand environment.
       - deploy:
           script:
+            - echo "Test ampersand" && echo "After ampersand"
             - pipelines-deploy
             - chmod +x ./copy-files.sh
             - ./copy-files.sh
