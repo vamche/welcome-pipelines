@@ -23,3 +23,5 @@ events:
             - echo "nice..:)"
             - echo $PIPELINES_ENCRYPTED_VARIABLES_AVAILABLE
             - echo 'OK!!'
+            - sleep 5m
+            - sleep 5m
