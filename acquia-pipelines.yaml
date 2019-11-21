@@ -6,6 +6,8 @@ cde-databases:
 
 variables:
   global:
+    SEC:
+      secure: 2acuzniDD+8vKHWK0F2Zux3nOcGLjgyvmFWSyzlF9eGS2qpgZ81SXoF8QgtB8tDYsjxzYZOW3Y+jbHHWjAAmyaB7JidwsuHFOf6kflXEnyWxOmTygbLut8ktyuonviwmans7iQohjV4T7QYRIbP8TuiFKOIpHPnZQbwM4+F8tXKxBXPrdE8xHETa6yWqlLwa+8/Y9fHfsJmHhm6YAqogZmyCFNDTRfu0jPlprlbmUrb9ZeZSYOAdSXUN79tfb5HexO9a+ljiaKdT9/1Vvv1kWVPYbNK1alaejl/BF2L9Fy9fchb2iO/16pnHsrxtRGcUEclUJoA2AZY6jSFECY+owVOpIlG2Wz5vEyRmPyZwOuVwdAbTMUZ8LpTla2CAI7fXlDC6u3p+mr9Dg6DOjHr4dEV7cLJKPQldpp0kXAd41uHYdk6gc84nICViDC7TwzuJ8qb2D1xedwgZIIhBocrrIVjbw9AI50zLoBMK172lF9NLDl4NHuDGVJ+uYqr3ZkIy+LOthY18tjX9Nv+tPOQtgXSmWJdH8crLZ0IHTCqr3yBIJ/ys+rTgl57jExrT0K9B6loyov67+WSsUyLqT5nOMutfAIpWvH8YSMrY9hfpvA9pl/cGhmc31GQs4BIYuGwb7EZaJDhh7b1Gfwt+FW1xnpj6Ik3mXaqOUMxodA2wGl2O7E=ROboHwWbahKtxlvEzvm3DtHyIAD13tQIuE/K1wVMEZQWQA+wjsu0x3k9gNoAkxwTw2/Co5Z9pxIOwOJnpcAsZEl87zbjLxT5AM//hh37fGf6NmkHE7E4yMJimSeTwjrVAvemuTpDX/IkgeanC0U32N0PURlV6S22k72lgqm9Vaw=
     CLOUD_API_KEY:
       secure: 2acQXt7OOLEUgTlegTLpmM+vq+HwkxqFq0VebvatKllxHejXLAfvRp0meTjE0r9kVi7oxk4MyKQ8+RhcNr2inYFHnS/FZnLJFwbkApK8mCQp+GdDIiZvp7e2mhHm7go9IDQUW10Umc1B1QKSDZ9/lKAUvvvoa2tu0UjtnwRTbzLsisoHi1ZLLiFbMUSyDsvZ/na3p0ypgRjAGbaFY6OCPYar/Bysl+qAwXLAeaQO58cotQEfb0L9QJT9WSmwY5uxneP0JYvpYdMYh72cUNr0uYue03NHMIOymWAO0XI+YI8FUcfhOzKsI4XDJ5wHy5UIX+lg5W2ho9qWQs1tQdeK17BQwj4ANdLpLlHytIe27XH9hLQX0HX6w8bx2G202VGd94wOHd88KaEp3GDS7BvSqbrcTKJEJwAKYgNBm+gUB1aOYmc7uR151JoaiDJpTTHKNoj9/pABOIccA16O0oPm4yU6sAIUn5I643Loqr1KG4X66fMoB4XzIlleZfa6XqEYEAQrgv0Ke3zBVNdg3PQZ/pLr3dphsQiWCGM65k7eED9/ZBcq+PUJRAF17oK0f3J+/mH81Rk5Lqf8wMJGc1eaASOo3ARjkhOffMblNR1RrCSW8vlsDOONGODu9k5BhjB2aMLGglHuaU5INcaEdLYf8DoofQFASw/yAJhLJ2HVzwFP8c=vgFfYyTDb3KBgT1NCzxmR+KKWSr469buLdOIKKwNgdT1ZK/QEgHpug8nLZRWG1RHWJouvZGWM5uwGaytsU6YczbWL/aZ07wfbbBSj8a4bZ6XCU7fEcCZvpLaqsrrTQ/L/jBQ8VJ8gxqCAakOvM0f3w==
     CLOUD_API_SECRET:
@@ -17,29 +19,4 @@ events:
       # If you have build instructions, put them here. They are not required.
       - build_site:
           script:
-            - touch docroot/index.html
-            - echo "You successfully deployed your build to an ODE SYNCDB master take a bow." > docroot/index.html
-
-  post-deploy:
-    steps:
-      # Deploy the build artifact to a Cloud on-demand environment.
-      - deploy:
-          script:
-            - pipelines-deploy
-            - chmod +x ./copy-files.sh
-            - ./copy-files.sh
-  # When a GitHub pull request is merged, this deletes the coresponding ODE.
-  pr-merged:
-    steps:
-      - deploy:
-          script:
-            - echo "Pull request merged"
-            - pipelines-deploy
-
-  # When a GitHub pull request is closed, this deletes the coresponding ODE.
-  pr-closed:
-    steps:
-      - deploy:
-          script:
-            - echo "Pull request closed"
-            - pipelines-deploy
+            - 'echo "SEC: [${SEC:0:4}...]"' 
