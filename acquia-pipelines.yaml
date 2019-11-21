@@ -20,3 +20,4 @@ events:
       - build_site:
           script:
             - 'echo "SEC: [${SEC:0:4}...]"' 
+            - echo "nice!"
