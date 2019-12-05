@@ -28,7 +28,7 @@ COPY_STATUS='in-progress'
 # Environments (Not ODEs which are Dev, Stage and Prod)
 ENVIRONMENTS=('dev', 'test', 'prod')
 
-if [[ ! ${ENVIRONMENTS[*]} =~ $CDE_NAME ]]
+if [[ ${ENVIRONMENTS[*]} =~ $CDE_NAME ]]
 then
   echo "Not dev.";
   while [ $COPY_STATUS == 'in-progress' ]; do
