@@ -23,5 +23,5 @@ events:
             - pipelines-deploy
             - CDE_NAME=$(cat $PIPELINES_SCRIPT_DATA_FILE | python -c "import sys, json; print json.load(sys.stdin)['environment']['PIPELINES_DEPLOYMENT_NAME']")
             - ENVIRONMENTS=('dev', 'test', 'prod')
-            - if [[ ! ${ENVIRONMENTS[*]} =~ $CDE_NAME ]];then chmod +x ./copy-files.sh && ./copy-files.sh; fi            
+            - if [[ ! ${ENVIRONMENTS[*]} =~ $CDE_NAME ]];then chmod +x ./copy-files.sh && ./copy-files.sh; else echo 'This is not an ODE.'; fi            
           
