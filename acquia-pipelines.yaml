@@ -25,6 +25,13 @@ events:
       - setup:
           type: script
           script:
+            - echo 'build'
+  post-deploy:
+    steps:
+      # Deploy the build artifact to a Cloud on-demand environment.
+      - deploy:
+          script:
+            - pipelines-deploy
             - echo $PIPELINES_SCRIPT_DATA_FILE
             - cat $PIPELINES_SCRIPT_DATA_FILE
             
