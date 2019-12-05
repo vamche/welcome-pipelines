@@ -25,7 +25,7 @@ NOTIFICATION_LINK=$(curl -sS -X POST -d "{\"source\":\"$SOURCE_ENV_ID\"}" "https
 # Poll NOTIFICATION_LINK to know the task status, the status will be 'in-progress' until the task is finished. For more details: https://cloudapi-docs.acquia.com/#/Notifications/getNotificationByUuid
 COPY_STATUS='in-progress'
 
-# Environments (Not ODEs)
+# Environments (Not ODEs which are Dev, Stage and Prod)
 ENVIRONMENTS=('dev', 'test', 'prod')
 
 if [[ ! ${ENVIRONMENTS[*]} =~ $CDE_NAME ]]
