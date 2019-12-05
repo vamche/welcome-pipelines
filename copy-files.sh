@@ -25,19 +25,11 @@ NOTIFICATION_LINK=$(curl -sS -X POST -d "{\"source\":\"$SOURCE_ENV_ID\"}" "https
 # Poll NOTIFICATION_LINK to know the task status, the status will be 'in-progress' until the task is finished. For more details: https://cloudapi-docs.acquia.com/#/Notifications/getNotificationByUuid
 COPY_STATUS='in-progress'
 
-# Environments (Not ODEs which are Dev, Stage and Prod)
-ENVIRONMENTS=('dev', 'test', 'prod')
-
-if [[ ${ENVIRONMENTS[*]} =~ $CDE_NAME ]]
-then
-  echo "Not dev.";
-  while [ $COPY_STATUS == 'in-progress' ]; do
+while [ $COPY_STATUS == 'in-progress' ]; do
     sleep 10;
     COPY_STATUS=$(curl -sS -X GET $NOTIFICATION_LINK -H "Content-Type: application/json" -H "Authorization: Bearer ${TOKEN}" | python -c "import sys, json; print json.load(sys.stdin)['status']");
     echo "Waiting for the files to be copied, current status: $COPY_STATUS.";
-  done
-fi
-
+done
 
 # Exit with 1 if the final status is 'failed'. Do nothing if the final status is 'completed' which mean the files copied successfully.
 if [ $COPY_STATUS == 'failed' ]
