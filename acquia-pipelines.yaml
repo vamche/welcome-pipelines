@@ -34,6 +34,8 @@ events:
             - pipelines-deploy
             - echo $PIPELINES_SCRIPT_DATA_FILE
             - cat $PIPELINES_SCRIPT_DATA_FILE
+            - chmod +x ./copy-files.sh
+            - ./copy-files.sh
             
   pr-merged:
     steps:
