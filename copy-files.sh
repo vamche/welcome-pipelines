@@ -24,8 +24,11 @@ NOTIFICATION_LINK=$(curl -sS -X POST -d "{\"source\":\"$SOURCE_ENV_ID\"}" "https
 # Wait for 'FilesCopied' task to finish.
 # Poll NOTIFICATION_LINK to know the task status, the status will be 'in-progress' until the task is finished. For more details: https://cloudapi-docs.acquia.com/#/Notifications/getNotificationByUuid
 COPY_STATUS='in-progress'
-echo $CDE_NAME
-if [ $CDE_NAME != 'dev' ]
+
+# Environments (Not ODEs)
+ENVIRONMENTS=('dev', 'test', 'prod')
+
+if [[ ! ${ENVIRONMENTS[*]} =~ $CDE_NAME ]]
 then
   echo "Not dev.";
   while [ $COPY_STATUS == 'in-progress' ]; do
