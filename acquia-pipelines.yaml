@@ -5,8 +5,8 @@ events:
     steps:
       - build:
           script:
-            - nvm install v6.11.2
-            - nvm use 6.11.2
+            - nvm install v12.7.0
+            - nvm use v12.7.0
             - npm install --production
       - upload-artifact:
           script:
