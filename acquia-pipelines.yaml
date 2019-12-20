@@ -7,7 +7,6 @@ events:
     steps:
       - build:
           script:
-            - echo 'Start'
             - env
             - nvm install v12.7.0
             - nvm use 12.7.0
