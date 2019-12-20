@@ -1,16 +1,19 @@
-version: 1.2.0
-
+version: 1.0.0
+variables:
+  global:
+    HOSTING_API_STAGE: canary
 events:
   build:
     steps:
       - build:
           script:
+            - env
             - nvm install v12.7.0
-            - nvm use v12.7.0
-            - npm install --production
+            - nvm use 12.7.0
+            - npm install -g npm
+            - npm install
       - upload-artifact:
           script:
-            - echo "Testing Hosting API store artifact success scenario"
             - pipelines-artifact start
             - pipelines-artifact upload $SOURCE_DIR
   fail-on-build:
